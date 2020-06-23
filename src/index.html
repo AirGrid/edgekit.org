@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
+  <title>EdgeKit</title>
+</head>
+
+<body>
+  <header class="container header">
+    <div class="header__logo">EdgeKit</div>
+
+    <nav class="nav">
+      <a class="nav__link" href="#">Docs</a>
+      <a class="nav__link" href="#">Blog</a>
+      <a class="nav__link" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+          <path d="M5.83594 14.207s-.03516-.0351-.07032-.0703c-.03515 0-.07031-.0351-.14062-.0351-.14062 0-.17578.0703-.17578.1406 0 .1055.03516.1406.17578.1406s.21094-.0703.21094-.1758zm-1.08985-.1406c0-.0703.07032-.1055.21094-.0703.10547.0351.14063.0703.14063.1406s-.03516.1055-.07032.1055c-.07031.0351-.10546.0351-.14062 0-.07031 0-.10547-.0352-.14063-.0703-.03515-.0352-.03515-.0703 0-.1055zm1.54688-.0703c.10547 0 .17578.0351.17578.1055 0 .0703-.03516.1406-.14063.1757H6.1875c-.03516 0-.07031-.0703-.07031-.1406s.03515-.1055.17578-.1406zM8.61328.53125c1.58202 0 3.05862.386719 4.42972 1.125 1.3359.77344 2.4258 1.79297 3.1992 3.05859.7734 1.33594 1.1953 2.8125 1.1953 4.39454 0 1.96872-.5625 3.69142-1.6523 5.23832-1.0899 1.5468-2.4961 2.6015-4.254 3.164-.2109.0703-.3515.0352-.457-.0703-.1054-.0703-.1406-.2109-.1406-.3516v-2.9531c0-.7383-.2109-1.2656-.5977-1.6172.8438-.0703 1.5118-.2109 1.9336-.3515.6328-.211 1.1602-.5625 1.5117-1.0547.3868-.5977.5977-1.44142.5977-2.49611 0-.42188-.1055-.8086-.2461-1.16016-.1406-.21094-.3516-.52734-.668-.87891.0704-.21093.1407-.49218.1758-.84374 0-.49219-.0703-1.01954-.2461-1.54688-.2461-.07031-.5625 0-.9843.14062-.2813.14063-.6329.28126-.9844.49219l-.457.31641c-.7383-.21094-1.47661-.31641-2.25005-.31641-.77344 0-1.47656.10547-2.17969.31641l-.45703-.31641c-.38672-.21093-.73828-.35156-1.01953-.49219-.42188-.14062-.73828-.21093-.94922-.14062-.21094.52734-.3164 1.05469-.24609 1.54688 0 .35156.03515.59765.14062.80859-.28125.35156-.49219.70312-.63281.98437-.14062.28125-.17578.66797-.17578 1.08985 0 1.05469.17578 1.89841.5625 2.46091.3164.4922.80859.8789 1.47656 1.0899.42188.1406 1.05469.2812 1.89844.3515-.31641.2813-.49219.7032-.5625 1.1953-.42188.211-.8086.2813-1.16016.211-.63281-.0352-1.08984-.3516-1.40625-.9492-.14062-.2461-.35156-.4571-.5625-.6328-.17578-.0704-.35156-.1758-.52734-.2461l-.24609-.0352c-.28126 0-.42188.0703-.42188.1406s.03516.1758.17578.2461l.17578.1406c.14063.1055.31641.2461.49219.4571.14063.1758.24609.3515.35156.5625l.14063.2812c.10547.3516.3164.6328.66797.8086.28125.1758.59765.2813 1.01953.3164.28125.0352.5625.0352.8789-.0351l.38672-.0352.03516 2.1445c0 .1407-.07031.2813-.17578.3516-.10547.1055-.2461.1406-.42188.0703-1.79297-.5625-3.23437-1.6172-4.32422-3.164C.527344 12.8008 0 11.0781 0 9.10938 0 7.52734.351562 6.08594 1.125 4.75c.73828-1.30078 1.75781-2.32031 3.09375-3.09375C5.51953.917969 6.99609.53125 8.61328.53125zM3.41016 12.6602c.03515-.0352.10546-.0352.17578.0351.07031.0703.07031.1406.03515.1758-.07031.0703-.10547.0351-.17578-.0352s-.10547-.1054-.03515-.1757zm-.38672-.2813c.03515-.0351.10547-.0351.17578 0 .07031.0352.07031.0703.07031.1406-.03515.0703-.10547.0703-.17578 0-.07031-.0351-.10547-.0703-.07031-.1406zm1.16015 1.2305h.10547c.03516 0 .07032.0351.10547.0703.03516.0351.07031.0703.07031.1055v.1054c-.07031.0703-.17578.0703-.24609-.0351-.07031-.0352-.07031-.0703-.07031-.1407 0-.0351 0-.0703.03515-.1054zm-.42187-.4922h.10547c.03515 0 .07031.0351.10547.0703.07031.1055.07031.1758 0 .2109-.03516.0352-.07032.0352-.10547 0-.03516 0-.07031-.0351-.10547-.0703-.07031-.1054-.07031-.1758 0-.2109z"/>
+        </svg>
+      </a>
+      <a class="nav__link" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
+          <path d="M16.3125.5c.457 0 .8437.175781 1.1953.492188C17.8242 1.34375 18 1.73047 18 2.1875v10.125c0 .4922-.1758.8789-.4922 1.1953-.3516.3516-.7383.4922-1.1953.4922H1.6875c-.49219 0-.878906-.1406-1.195312-.4922C.140625 13.1914 0 12.8047 0 12.3125V2.1875c0-.45703.140625-.84375.492188-1.195312C.808594.675781 1.19531.5 1.6875.5h14.625zm0 1.6875H1.6875v1.44141c.80859.66797 2.39062 1.89843 4.74609 3.72656l.31641.28125c.45703.42187.84375.70312 1.125.84375.42188.31641.80859.45703 1.125.45703.28125 0 .66797-.14062 1.125-.45703.2812-.14063.6328-.42188 1.125-.84375l.3164-.28125c2.3203-1.79297 3.9024-3.02344 4.7461-3.72656V2.1875zm-14.625 10.125h14.625V5.77344l-4.0781 3.23437c-.5977.49219-1.0899.84375-1.4414 1.05469-.6328.3867-1.2305.5625-1.793.5625s-1.19531-.1758-1.82812-.5625c-.35157-.21094-.84376-.5625-1.44141-1.05469L1.6875 5.77344v6.53906z"/>
+        </svg>
+      </a>
+    </nav>
+  </header>
+
+  <section class="intro">
+    <div class="container">
+      <div class="intro__inner">
+        <h1 class="intro__title">
+          EdgeKit
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="16" fill="#2C5EF6"/>
+            <path fill="#fff" d="M18.041 19.3203c.1563 1.1817.9961 1.7774 2.2949 1.7774.4688 0 1.0157-.0586 1.2403-.1465v-1.7676c-.1563.0391-.3907.0684-.5567.0684-.625 0-.8789-.3321-.8789-1.2208v-7.7246h-2.1582v1.6309h-.1953c-.459-1.1523-1.4648-1.8066-2.9492-1.8066-2.4121 0-3.9258 1.7675-3.9258 4.6093v1.8067c0 2.832 1.543 4.6386 3.9453 4.6386 1.5332 0 2.5488-.664 2.9981-1.8652h.1855zm-2.4805-.1367c-1.4843 0-2.4316-1.0742-2.4316-2.7734v-1.5723c0-1.6992.9473-2.7832 2.4316-2.7832 1.4844 0 2.3829 1.084 2.3829 2.7832v1.5723c0 1.6992-.8985 2.7734-2.3829 2.7734z"/>
+          </svg>
+        </h1>
+        <h2 class="intro__subtitle">
+          An open source, privacy focuset client side library <br>
+          for the creation and monetisation of online <br>
+          audiences.
+        </h2>
+        <div class="intro__field">
+          <div class="intro__field-text">$ npm i -S edgekit</div>
+          <button
+            type="button"
+            class="intro__field-button copyable-button"
+            data-value="$ npm i -S edgekit"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 13">
+              <path d="M15.3281.167969c.0703-.0703128.1407-.105469.2813-.105469.1054 0 .2109.0351562.3164.105469l.9844 1.019531c.0703.07031.1406.17578.1406.28125 0 .14063-.0703.24609-.1406.31641L6.36328 12.332c-.07031.0703-.17578.1055-.28125.1055-.14062 0-.24609-.0352-.31641-.1055L1.08984 7.62109c-.105465-.07031-.140621-.14062-.140621-.28125 0-.10546.035156-.21093.140621-.3164l.98438-.98438c.07031-.07031.17578-.14062.3164-.14062.10547 0 .21094.07031.28126.14062l3.41015 3.41016L15.3281.167969z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 19">
+              <path d="M15.2578 2.57031c.3164.35157.4922.73828.4922 1.19531v9.42188c0 .4922-.1758.8789-.4922 1.1953-.3516.3516-.7383.4922-1.1953.4922H11.25v1.6875c0 .4922-.1758.8789-.4922 1.1953-.3516.3516-.7383.4922-1.1953.4922h-7.875c-.49219 0-.878906-.1406-1.195312-.4922C.140625 17.4414 0 17.0547 0 16.5625v-11.25c0-.45703.140625-.84375.492188-1.19531C.808594 3.80078 1.19531 3.625 1.6875 3.625H4.5V1.9375c0-.45703.14062-.84375.49219-1.195312C5.30859.425781 5.69531.25 6.1875.25h6.0469c.457 0 .8437.175781 1.1953.492188l1.8281 1.828122zM9.35156 16.5625c.03516 0 .07032 0 .14063-.0703.03515-.0352.07031-.0703.07031-.1406V14.875h-3.375c-.49219 0-.87891-.1406-1.19531-.4922-.35157-.3164-.49219-.7031-.49219-1.1953v-7.875H1.89844c-.07032 0-.10547.03516-.14063.07031-.07031.07031-.07031.10547-.07031.14063V16.3516c0 .0703 0 .1054.07031.1406.03516.0703.07031.0703.14063.0703h7.45312zm4.50004-3.375c.0351 0 .0703 0 .1406-.0703.0351-.0352.0703-.0703.0703-.1406V5.875h-3.0937c-.2461 0-.4571-.07031-.5977-.24609-.1758-.14063-.2461-.35157-.2461-.59766V1.9375H6.39844c-.07032 0-.10547.03516-.14063.07031-.07031.07031-.07031.10547-.07031.14063V12.9766c0 .0703 0 .1054.07031.1406.03516.0703.07031.0703.14063.0703h7.45316zm.2109-9v-.35156c0-.03516-.0352-.07032-.0703-.14063l-1.6875-1.6875c-.0703-.03515-.1055-.07031-.1406-.07031h-.3516v2.25h2.25z"/>
+            </svg>
+            <div class="text">
+              Copy
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section publishers__section">
+    <div class="container">
+      <h2 class="section__title publishers__section-title">
+        Made for publishers
+      </h2>
+
+      <div class="publishers">
+        <div class="publishers__item publishers__item--data">
+          <div class="publishers__content">
+            <h3 class="publishers__title">
+              Take back control <br class="publishers__title-br-mobile"> of your first party data
+            </h3>
+            <p class="publishers__subtitle">
+              Monetise your 1st party data without reliance on third party
+              aggregators or adtech middlemen.
+            </p>
+          </div>
+          <div class="publishers__img">
+            <img src="./images/publisher-data.svg" alt="Publisher data">
+          </div>
+        </div>
+
+        <div class="publishers__item publishers__item--protect">
+          <div class="publishers__content">
+            <h3 class="publishers__title">
+              Protect the privacy <br class="publishers__title-br-mobile"> of your audience
+            </h3>
+            <p class="publishers__subtitle">
+              Your user’s data is not shared with any 3rd parties, all
+              information is stored and processed on the individual’s device.
+            </p>
+          </div>
+          <div class="publishers__img">
+            <img src="./images/publisher-privacy.svg" alt="Publisher privacy">
+          </div>
+        </div>
+
+        <div class="publishers__item publishers__item--earn">
+          <div class="publishers__content">
+            <h3 class="publishers__title">
+              Earn more from <br class="publishers__title-br-mobile"> online advertising
+            </h3>
+            <p class="publishers__subtitle">
+              Attach cookie-less audience signals <br class="publishers__subtitle--br-375">
+              to each bid request to increase <br class="publishers__subtitle--br-375">
+              the yield of your inventory.
+            </p>
+          </div>
+          <div class="publishers__img">
+            <img src="./images/publisher-earn.svg" alt="Publisher earn">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--integrate">
+    <div class="container">
+      <div class="integrate__header">
+        <div class="integrate__content">
+          <h2 class="section__title section__title--black integrate--title">
+            Integrates with header bidding.
+          </h2>
+          <p class="integrate__subtitle">
+            Use EdgeKit alongside your header bidding technology <br>
+            to decorate bid requests with a standard taxonomy <br>
+            of audience signals.
+          </p>
+        </div>
+
+        <div class="integrate__icons">
+          <div class="integrate__icon-wrapper integrate__icon-wrapper--prebid">
+            <img
+              class="integrate__icon"
+              src="./images/prebid_icon.png"
+              alt="Brebid"
+            >
+          </div>
+          <div class="integrate__icon-wrapper integrate__icon-wrapper--index">
+            <img
+              class="integrate__icon"
+              src="./images/index_icon.png"
+              alt="Index exchange"
+            >
+            <div class="integrate__icon-coming-soon">
+              Coming Soon
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="integrate__scheme">
+        <img
+          class="integrate__scheme-image"
+          src="./images/scheme.svg"
+          alt="Integrate scheme"
+        >
+        <img
+          class="integrate__scheme-image integrate__scheme-image--mobile"
+          src="./images/scheme768.svg"
+          alt="Integrate scheme"
+        >
+        <p class="integrate__text">
+          Publisher 1st party data powered private marketplaces
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--hood">
+    <div class="container">
+      <h2 class="section__title hood__section-title">
+        Under the hood
+      </h2>
+
+      <div class="hood">
+        <div class="hood__item">
+          <img class="hood__pic" src="./images/hood-lock.svg" alt="Free and open source">
+          <div class="hood__content">
+            <div class="hood__title">Free and <br> open source</div>
+          </div>
+        </div>
+
+        <div class="hood__item">
+          <img class="hood__pic" src="./images/hood-zero.svg" alt="Zero dependencies">
+          <div class="hood__content">
+            <div class="hood__title">Zero <br> dependencies</div>
+          </div>
+        </div>
+
+        <div class="hood__item">
+          <img class="hood__pic" src="./images/hood-developed.svg" alt="Developed using typescript">
+          <div class="hood__content">
+            <div class="hood__title">Developed <br> using typescript</div>
+          </div>
+        </div>
+
+        <div class="hood__item">
+          <img class="hood__pic" src="./images/hood-bundle.svg" alt="Small bundle size x kbs">
+          <div class="hood__content">
+            <div class="hood__title">Small bundle size <br> x kbs</div>
+          </div>
+        </div>
+
+        <div class="hood__item">
+          <img class="hood__pic hood__pic--server" src="./images/hood-server.svg" alt="No server needed">
+          <div class="hood__content">
+            <div class="hood__title">No server <br> needed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--community">
+    <div class="container">
+      <div class="community__header">
+        <div class="community__content">
+          <h2 class="community__title section__title section__title--black">
+            Community driven.
+          </h2>
+          <p class="community__subtitle">
+            We welcome marketers & publishers to collaborate on audience
+            taxonomy and definitions that work for the whole industry, whilst
+            keeping user data private.
+          </p>
+          <div class="community__descr">
+            <p>
+              Audience data has traditionally been a very opaque business in the
+              online advertising industry, due to a lack of standards & quality
+              control. Recent initiatives from the IAB, such as the
+              <a href="">Data Transparency Framework</a> aim to address this by
+              applying “nutrition labels” to audience segments.
+            </p>
+            <p>
+              EdgeKit goes one step further and defines these audiences in open
+              source code for all to see, and improve together.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="community__icon">
+          <img src="./images/iab.png" class="com-pic" alt="">
+        </div>
+      </div>
+
+      <div class="community__code">
+        <code>
+          <div class="community__code-wrapper">
+            <div class="code-line">
+              {
+            </div>
+            <div class="code-line">
+              <div class="code-nested">
+                “name”: <span class="code-value">“travel”</span>
+              </div>
+            </div>
+            <div class="code-line">
+              <div class="code-nested">
+                “type”: <span class="code-value">“interest”</span>
+              </div>
+            </div>
+            <div class="code-line">
+              <div class="code-nested">
+                “lookback”: <span class="code-value">7</span>,
+              </div>
+            </div>
+            <div class="code-line">
+              <div class="code-nested">
+                “keywords”: “[<span class="code-value">“beach”</span>, <span class="code-value">“cruises”</span>, <span class="code-value">“water sports”</span>]”
+              </div>
+            </div>
+            <div class="code-line">
+              }
+            </div>
+          </div>
+        </code>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="subscribe">
+        <div class="subscribe__header">
+          <h2 class="section__title subscribe__title">
+            Join the community.
+          </h2>
+          <h2 class="section__title section__title--black subscribe__title">
+            Sign up for news.
+          </h2>
+        </div>
+
+        <div id="email-top">
+          <form
+            name="email-top"
+            method="POST"
+            data-netlify="true"
+            class="subscribe__form"
+            onsubmit="submitForm(event)"
+          >
+            <input
+              type="email"
+              placeholder="Email address"
+              class="subscribe__form-field"
+              name="email"
+              required
+            >
+            <button
+              type="submit"
+              class="subscribe__form-submit"
+            >
+              Subscribe
+            </button>
+          </form>
+          <div class="form-success-message">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" clip-rule="evenodd" viewBox="0 0 24 24">
+              <path d="M21 6.285L9.84 19.018 3 13l1.319-1.49 5.341 4.686L19.525 5 21 6.285z"/>
+            </svg>
+            <b>Thank you.</b> Please check your inbox to verify the email address.
+          </div>
+        </div>
+
+        <div class="subscribe__links">
+          <a href="" class="subscribe__link">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+              <path d="M5.83594 14.207s-.03516-.0351-.07032-.0703c-.03515 0-.07031-.0351-.14062-.0351-.14062 0-.17578.0703-.17578.1406 0 .1055.03516.1406.17578.1406s.21094-.0703.21094-.1758zm-1.08985-.1406c0-.0703.07032-.1055.21094-.0703.10547.0351.14063.0703.14063.1406s-.03516.1055-.07032.1055c-.07031.0351-.10546.0351-.14062 0-.07031 0-.10547-.0352-.14063-.0703-.03515-.0352-.03515-.0703 0-.1055zm1.54688-.0703c.10547 0 .17578.0351.17578.1055 0 .0703-.03516.1406-.14063.1757H6.1875c-.03516 0-.07031-.0703-.07031-.1406s.03515-.1055.17578-.1406zM8.61328.53125c1.58202 0 3.05862.386719 4.42972 1.125 1.3359.77344 2.4258 1.79297 3.1992 3.05859.7734 1.33594 1.1953 2.8125 1.1953 4.39454 0 1.96872-.5625 3.69142-1.6523 5.23832-1.0899 1.5468-2.4961 2.6015-4.254 3.164-.2109.0703-.3515.0352-.457-.0703-.1054-.0703-.1406-.2109-.1406-.3516v-2.9531c0-.7383-.2109-1.2656-.5977-1.6172.8438-.0703 1.5118-.2109 1.9336-.3515.6328-.211 1.1602-.5625 1.5117-1.0547.3868-.5977.5977-1.44142.5977-2.49611 0-.42188-.1055-.8086-.2461-1.16016-.1406-.21094-.3516-.52734-.668-.87891.0704-.21093.1407-.49218.1758-.84374 0-.49219-.0703-1.01954-.2461-1.54688-.2461-.07031-.5625 0-.9843.14062-.2813.14063-.6329.28126-.9844.49219l-.457.31641c-.7383-.21094-1.47661-.31641-2.25005-.31641-.77344 0-1.47656.10547-2.17969.31641l-.45703-.31641c-.38672-.21093-.73828-.35156-1.01953-.49219-.42188-.14062-.73828-.21093-.94922-.14062-.21094.52734-.3164 1.05469-.24609 1.54688 0 .35156.03515.59765.14062.80859-.28125.35156-.49219.70312-.63281.98437-.14062.28125-.17578.66797-.17578 1.08985 0 1.05469.17578 1.89841.5625 2.46091.3164.4922.80859.8789 1.47656 1.0899.42188.1406 1.05469.2812 1.89844.3515-.31641.2813-.49219.7032-.5625 1.1953-.42188.211-.8086.2813-1.16016.211-.63281-.0352-1.08984-.3516-1.40625-.9492-.14062-.2461-.35156-.4571-.5625-.6328-.17578-.0704-.35156-.1758-.52734-.2461l-.24609-.0352c-.28126 0-.42188.0703-.42188.1406s.03516.1758.17578.2461l.17578.1406c.14063.1055.31641.2461.49219.4571.14063.1758.24609.3515.35156.5625l.14063.2812c.10547.3516.3164.6328.66797.8086.28125.1758.59765.2813 1.01953.3164.28125.0352.5625.0352.8789-.0351l.38672-.0352.03516 2.1445c0 .1407-.07031.2813-.17578.3516-.10547.1055-.2461.1406-.42188.0703-1.79297-.5625-3.23437-1.6172-4.32422-3.164C.527344 12.8008 0 11.0781 0 9.10938 0 7.52734.351562 6.08594 1.125 4.75c.73828-1.30078 1.75781-2.32031 3.09375-3.09375C5.51953.917969 6.99609.53125 8.61328.53125zM3.41016 12.6602c.03515-.0352.10546-.0352.17578.0351.07031.0703.07031.1406.03515.1758-.07031.0703-.10547.0351-.17578-.0352s-.10547-.1054-.03515-.1757zm-.38672-.2813c.03515-.0351.10547-.0351.17578 0 .07031.0352.07031.0703.07031.1406-.03515.0703-.10547.0703-.17578 0-.07031-.0351-.10547-.0703-.07031-.1406zm1.16015 1.2305h.10547c.03516 0 .07032.0351.10547.0703.03516.0351.07031.0703.07031.1055v.1054c-.07031.0703-.17578.0703-.24609-.0351-.07031-.0352-.07031-.0703-.07031-.1407 0-.0351 0-.0703.03515-.1054zm-.42187-.4922h.10547c.03515 0 .07031.0351.10547.0703.07031.1055.07031.1758 0 .2109-.03516.0352-.07032.0352-.10547 0-.03516 0-.07031-.0351-.10547-.0703-.07031-.1054-.07031-.1758 0-.2109z"/>
+            </svg>
+            Visit us at Github
+            <div class="subscribe__link-arrow-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 22">
+                <path d="M10.7188.78125c.0937-.09375.2343-.140625.4218-.140625.1406 0 .2813.046875.375.140625l9.7969 9.84375c.0937.0938.1875.2344.1875.375 0 .1875-.0938.2812-.1875.375l-9.7969 9.8438c-.0937.0937-.2344.1406-.375.1406-.1875 0-.3281-.0469-.4218-.1406l-.93755-.9376c-.09375-.0937-.14063-.1874-.14063-.375 0-.1406.04688-.2812.14063-.4218l7.26565-7.2656H1.0625c-.1875 0-.328125-.0469-.421875-.1407C.546875 11.9844.5 11.8438.5 11.6562v-1.3124c0-.1407.046875-.2813.140625-.37505s.234375-.1875.421875-.1875h15.9844L9.78125 2.51562c-.09375-.09374-.14063-.23437-.14063-.42187 0-.14063.04688-.28125.14063-.375l.93755-.9375z"/>
+              </svg>
+            </div>
+          </a>
+          <a href="mailto:hello@edgekit.org" class="subscribe__link">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
+              <path d="M16.3125.5c.457 0 .8437.175781 1.1953.492188C17.8242 1.34375 18 1.73047 18 2.1875v10.125c0 .4922-.1758.8789-.4922 1.1953-.3516.3516-.7383.4922-1.1953.4922H1.6875c-.49219 0-.878906-.1406-1.195312-.4922C.140625 13.1914 0 12.8047 0 12.3125V2.1875c0-.45703.140625-.84375.492188-1.195312C.808594.675781 1.19531.5 1.6875.5h14.625zm0 1.6875H1.6875v1.44141c.80859.66797 2.39062 1.89843 4.74609 3.72656l.31641.28125c.45703.42187.84375.70312 1.125.84375.42188.31641.80859.45703 1.125.45703.28125 0 .66797-.14062 1.125-.45703.2812-.14063.6328-.42188 1.125-.84375l.3164-.28125c2.3203-1.79297 3.9024-3.02344 4.7461-3.72656V2.1875zm-14.625 10.125h14.625V5.77344l-4.0781 3.23437c-.5977.49219-1.0899.84375-1.4414 1.05469-.6328.3867-1.2305.5625-1.793.5625s-1.19531-.1758-1.82812-.5625c-.35157-.21094-.84376-.5625-1.44141-1.05469L1.6875 5.77344v6.53906z"/>
+            </svg>
+            Contact us via hello@edgekit.org
+            <div class="subscribe__link-arrow-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 22">
+                <path d="M10.7188.78125c.0937-.09375.2343-.140625.4218-.140625.1406 0 .2813.046875.375.140625l9.7969 9.84375c.0937.0938.1875.2344.1875.375 0 .1875-.0938.2812-.1875.375l-9.7969 9.8438c-.0937.0937-.2344.1406-.375.1406-.1875 0-.3281-.0469-.4218-.1406l-.93755-.9376c-.09375-.0937-.14063-.1874-.14063-.375 0-.1406.04688-.2812.14063-.4218l7.26565-7.2656H1.0625c-.1875 0-.328125-.0469-.421875-.1407C.546875 11.9844.5 11.8438.5 11.6562v-1.3124c0-.1407.046875-.2813.140625-.37505s.234375-.1875.421875-.1875h15.9844L9.78125 2.51562c-.09375-.09374-.14063-.23437-.14063-.42187 0-.14063.04688-.28125.14063-.375l.93755-.9375z"/>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container container--large">
+      <div class="get-started">
+        <div class="container get-started__container">
+          <h2 class="get-started__title">
+            Get started.
+          </h2>
+          <div class="get-started__wrapper">
+            <div class="get-started__field">
+              <div class="get-started__field-text">
+                $ npm i -S edgekit
+              </div>
+              <button
+                type="button"
+                class="get-started__field-button copyable-button"
+                data-value="$ npm i -S edgekit"
+              >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 13">
+                <path d="M15.3281.167969c.0703-.0703128.1407-.105469.2813-.105469.1054 0 .2109.0351562.3164.105469l.9844 1.019531c.0703.07031.1406.17578.1406.28125 0 .14063-.0703.24609-.1406.31641L6.36328 12.332c-.07031.0703-.17578.1055-.28125.1055-.14062 0-.24609-.0352-.31641-.1055L1.08984 7.62109c-.105465-.07031-.140621-.14062-.140621-.28125 0-.10546.035156-.21093.140621-.3164l.98438-.98438c.07031-.07031.17578-.14062.3164-.14062.10547 0 .21094.07031.28126.14062l3.41015 3.41016L15.3281.167969z"/>
+              </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 19">
+                  <path d="M15.2578 2.57031c.3164.35157.4922.73828.4922 1.19531v9.42188c0 .4922-.1758.8789-.4922 1.1953-.3516.3516-.7383.4922-1.1953.4922H11.25v1.6875c0 .4922-.1758.8789-.4922 1.1953-.3516.3516-.7383.4922-1.1953.4922h-7.875c-.49219 0-.878906-.1406-1.195312-.4922C.140625 17.4414 0 17.0547 0 16.5625v-11.25c0-.45703.140625-.84375.492188-1.19531C.808594 3.80078 1.19531 3.625 1.6875 3.625H4.5V1.9375c0-.45703.14062-.84375.49219-1.195312C5.30859.425781 5.69531.25 6.1875.25h6.0469c.457 0 .8437.175781 1.1953.492188l1.8281 1.828122zM9.35156 16.5625c.03516 0 .07032 0 .14063-.0703.03515-.0352.07031-.0703.07031-.1406V14.875h-3.375c-.49219 0-.87891-.1406-1.19531-.4922-.35157-.3164-.49219-.7031-.49219-1.1953v-7.875H1.89844c-.07032 0-.10547.03516-.14063.07031-.07031.07031-.07031.10547-.07031.14063V16.3516c0 .0703 0 .1054.07031.1406.03516.0703.07031.0703.14063.0703h7.45312zm4.50004-3.375c.0351 0 .0703 0 .1406-.0703.0351-.0352.0703-.0703.0703-.1406V5.875h-3.0937c-.2461 0-.4571-.07031-.5977-.24609-.1758-.14063-.2461-.35157-.2461-.59766V1.9375H6.39844c-.07032 0-.10547.03516-.14063.07031-.07031.07031-.07031.10547-.07031.14063V12.9766c0 .0703 0 .1054.07031.1406.03516.0703.07031.0703.14063.0703h7.45316zm.2109-9v-.35156c0-.03516-.0352-.07032-.0703-.14063l-1.6875-1.6875c-.0703-.03515-.1055-.07031-.1406-.07031h-.3516v2.25h2.25z"/>
+                </svg>
+                <div class="text">
+                  Copy
+                </div>
+              </button>
+            </div>
+            <div class="get-started__include">
+              <p class="get-started__include-title">
+                Or include the script directly from a CDN:
+              </p>
+              <p class="get-started__include-script">
+                &lt;script src=”blah.com”&gt;
+              </p>
+            </div>
+          </div>
+          <a href="" class="get-started__access">
+            <span class="get-started__access-text">
+              Access the full documentation
+            </span>
+            <span class="get-started__access-text get-started__access-text--mobile">
+              Full documentation
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
+              <path fill="#fff" d="M10.7188.78125c.0937-.09375.2343-.140625.4218-.140625.1406 0 .2813.046875.375.140625l9.7969 9.84375c.0937.0938.1875.2344.1875.375 0 .1875-.0938.2812-.1875.375l-9.7969 9.8438c-.0937.0937-.2344.1406-.375.1406-.1875 0-.3281-.0469-.4218-.1406l-.93755-.9376c-.09375-.0937-.14063-.1874-.14063-.375 0-.1406.04688-.2812.14063-.4218l7.26565-7.2656H1.0625c-.1875 0-.328125-.0469-.421875-.1407C.546875 11.9844.5 11.8438.5 11.6562v-1.3124c0-.1407.046875-.2813.140625-.37505s.234375-.1875.421875-.1875h15.9844L9.78125 2.51562c-.09375-.09374-.14063-.23437-.14063-.42187 0-.14063.04688-.28125.14063-.375l.93755-.9375z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container container--large">
+      <div class="deployment">
+        <div class="container deployment__container">
+          <div class="deployment__logo">
+            <img src="./images/logo.svg" alt="AirGrid Logo">
+          </div>
+          <h2 class="deployment__title">
+            Supercharge your EdgeKit deployment with AirGrid.
+          </h2>
+          <div class="deployment__list">
+            <div class="deployment__item">
+              <div class="deployment__item-left">
+                <div class="deployment__item-icon">
+                  <img src="./images/deployment-revenue.svg" alt="Deal revenue">
+                </div>
+              </div>
+              <div class="deployment__item-right">
+                <h3 class="deployment__item-title">Deal revenue</h3>
+                <p class="deployment__item-text">AirGrid integrates demand for EdgeKit audience signals through managed PMP deals.</p>
+              </div>
+            </div>
+            <div class="deployment__item">
+              <div class="deployment__item-left">
+                <div class="deployment__item-icon">
+                  <img src="./images/deployment-analytics.svg" alt="Analytics UI">
+                </div>
+              </div>
+              <div class="deployment__item-right">
+                <h3 class="deployment__item-title">Analytics UI</h3>
+                <p class="deployment__item-text">Get real time insights into your side audience and how they contribute towards data led revenue generation.</p>
+              </div>
+            </div>
+            <div class="deployment__item">
+              <div class="deployment__item-left">
+                <div class="deployment__item-icon">
+                  <img src="./images/deployment-NLP.svg" alt="NLP features">
+                </div>
+              </div>
+              <div class="deployment__item-right">
+                <h3 class="deployment__item-title">NLP features</h3>
+                <p class="deployment__item-text">Automatically integrated keywords extraction from your content to power EdgeKit audiences.</p>
+              </div>
+            </div>
+          </div>
+          <a href="" class="deployment__more">
+            Learn more
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
+              <path fill="#fff" d="M10.7188.78125c.0937-.09375.2343-.140625.4218-.140625.1406 0 .2813.046875.375.140625l9.7969 9.84375c.0937.0938.1875.2344.1875.375 0 .1875-.0938.2812-.1875.375l-9.7969 9.8438c-.0937.0937-.2344.1406-.375.1406-.1875 0-.3281-.0469-.4218-.1406l-.93755-.9376c-.09375-.0937-.14063-.1874-.14063-.375 0-.1406.04688-.2812.14063-.4218l7.26565-7.2656H1.0625c-.1875 0-.328125-.0469-.421875-.1407C.546875 11.9844.5 11.8438.5 11.6562v-1.3124c0-.1407.046875-.2813.140625-.37505s.234375-.1875.421875-.1875h15.9844L9.78125 2.51562c-.09375-.09374-.14063-.23437-.14063-.42187 0-.14063.04688-.28125.14063-.375l.93755-.9375z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sign-up">
+    <div class="container">
+      <div class="sign-up__wrapper">
+        <h2 class="section__title sign-up__title">Sign up for news.</h2>
+        <div id="email-bottom">
+          <form
+            name="email-bottom"
+            method="POST"
+            data-netlify="true"
+            class="sign-up__form"
+            onsubmit="submitForm(event)"
+          >
+            <input
+              type="email"
+              placeholder="Email address"
+              class="sign-up__form-field"
+              name="email"
+              required
+            >
+            <button
+              type="submit"
+              class="sign-up__form-submit"
+            >
+              Subscribe
+            </button>
+          </form>
+          <div class="form-success-message">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" clip-rule="evenodd" viewBox="0 0 24 24">
+              <path d="M21 6.285L9.84 19.018 3 13l1.319-1.49 5.341 4.686L19.525 5 21 6.285z"/>
+            </svg>
+            <b>Thank you.</b> Please check your inbox to verify the email address.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="container footer">
+    <div class="footer__logo">EdgeKit</div>
+
+    <nav class="nav">
+      <a class="nav__link" href="#">Docs</a>
+      <a class="nav__link" href="#">Blog</a>
+      <a class="nav__link" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+          <path d="M5.83594 14.207s-.03516-.0351-.07032-.0703c-.03515 0-.07031-.0351-.14062-.0351-.14062 0-.17578.0703-.17578.1406 0 .1055.03516.1406.17578.1406s.21094-.0703.21094-.1758zm-1.08985-.1406c0-.0703.07032-.1055.21094-.0703.10547.0351.14063.0703.14063.1406s-.03516.1055-.07032.1055c-.07031.0351-.10546.0351-.14062 0-.07031 0-.10547-.0352-.14063-.0703-.03515-.0352-.03515-.0703 0-.1055zm1.54688-.0703c.10547 0 .17578.0351.17578.1055 0 .0703-.03516.1406-.14063.1757H6.1875c-.03516 0-.07031-.0703-.07031-.1406s.03515-.1055.17578-.1406zM8.61328.53125c1.58202 0 3.05862.386719 4.42972 1.125 1.3359.77344 2.4258 1.79297 3.1992 3.05859.7734 1.33594 1.1953 2.8125 1.1953 4.39454 0 1.96872-.5625 3.69142-1.6523 5.23832-1.0899 1.5468-2.4961 2.6015-4.254 3.164-.2109.0703-.3515.0352-.457-.0703-.1054-.0703-.1406-.2109-.1406-.3516v-2.9531c0-.7383-.2109-1.2656-.5977-1.6172.8438-.0703 1.5118-.2109 1.9336-.3515.6328-.211 1.1602-.5625 1.5117-1.0547.3868-.5977.5977-1.44142.5977-2.49611 0-.42188-.1055-.8086-.2461-1.16016-.1406-.21094-.3516-.52734-.668-.87891.0704-.21093.1407-.49218.1758-.84374 0-.49219-.0703-1.01954-.2461-1.54688-.2461-.07031-.5625 0-.9843.14062-.2813.14063-.6329.28126-.9844.49219l-.457.31641c-.7383-.21094-1.47661-.31641-2.25005-.31641-.77344 0-1.47656.10547-2.17969.31641l-.45703-.31641c-.38672-.21093-.73828-.35156-1.01953-.49219-.42188-.14062-.73828-.21093-.94922-.14062-.21094.52734-.3164 1.05469-.24609 1.54688 0 .35156.03515.59765.14062.80859-.28125.35156-.49219.70312-.63281.98437-.14062.28125-.17578.66797-.17578 1.08985 0 1.05469.17578 1.89841.5625 2.46091.3164.4922.80859.8789 1.47656 1.0899.42188.1406 1.05469.2812 1.89844.3515-.31641.2813-.49219.7032-.5625 1.1953-.42188.211-.8086.2813-1.16016.211-.63281-.0352-1.08984-.3516-1.40625-.9492-.14062-.2461-.35156-.4571-.5625-.6328-.17578-.0704-.35156-.1758-.52734-.2461l-.24609-.0352c-.28126 0-.42188.0703-.42188.1406s.03516.1758.17578.2461l.17578.1406c.14063.1055.31641.2461.49219.4571.14063.1758.24609.3515.35156.5625l.14063.2812c.10547.3516.3164.6328.66797.8086.28125.1758.59765.2813 1.01953.3164.28125.0352.5625.0352.8789-.0351l.38672-.0352.03516 2.1445c0 .1407-.07031.2813-.17578.3516-.10547.1055-.2461.1406-.42188.0703-1.79297-.5625-3.23437-1.6172-4.32422-3.164C.527344 12.8008 0 11.0781 0 9.10938 0 7.52734.351562 6.08594 1.125 4.75c.73828-1.30078 1.75781-2.32031 3.09375-3.09375C5.51953.917969 6.99609.53125 8.61328.53125zM3.41016 12.6602c.03515-.0352.10546-.0352.17578.0351.07031.0703.07031.1406.03515.1758-.07031.0703-.10547.0351-.17578-.0352s-.10547-.1054-.03515-.1757zm-.38672-.2813c.03515-.0351.10547-.0351.17578 0 .07031.0352.07031.0703.07031.1406-.03515.0703-.10547.0703-.17578 0-.07031-.0351-.10547-.0703-.07031-.1406zm1.16015 1.2305h.10547c.03516 0 .07032.0351.10547.0703.03516.0351.07031.0703.07031.1055v.1054c-.07031.0703-.17578.0703-.24609-.0351-.07031-.0352-.07031-.0703-.07031-.1407 0-.0351 0-.0703.03515-.1054zm-.42187-.4922h.10547c.03515 0 .07031.0351.10547.0703.07031.1055.07031.1758 0 .2109-.03516.0352-.07032.0352-.10547 0-.03516 0-.07031-.0351-.10547-.0703-.07031-.1054-.07031-.1758 0-.2109z"/>
+        </svg>
+      </a>
+      <a class="nav__link" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
+          <path d="M16.3125.5c.457 0 .8437.175781 1.1953.492188C17.8242 1.34375 18 1.73047 18 2.1875v10.125c0 .4922-.1758.8789-.4922 1.1953-.3516.3516-.7383.4922-1.1953.4922H1.6875c-.49219 0-.878906-.1406-1.195312-.4922C.140625 13.1914 0 12.8047 0 12.3125V2.1875c0-.45703.140625-.84375.492188-1.195312C.808594.675781 1.19531.5 1.6875.5h14.625zm0 1.6875H1.6875v1.44141c.80859.66797 2.39062 1.89843 4.74609 3.72656l.31641.28125c.45703.42187.84375.70312 1.125.84375.42188.31641.80859.45703 1.125.45703.28125 0 .66797-.14062 1.125-.45703.2812-.14063.6328-.42188 1.125-.84375l.3164-.28125c2.3203-1.79297 3.9024-3.02344 4.7461-3.72656V2.1875zm-14.625 10.125h14.625V5.77344l-4.0781 3.23437c-.5977.49219-1.0899.84375-1.4414 1.05469-.6328.3867-1.2305.5625-1.793.5625s-1.19531-.1758-1.82812-.5625c-.35157-.21094-.84376-.5625-1.44141-1.05469L1.6875 5.77344v6.53906z"/>
+        </svg>
+      </a>
+    </nav>
+  </footer>
+
+  <script>
+    function onButtonClicked() {
+      const btn = this;
+      const prevText = btn.querySelector('.text').innerText;
+      const copiedText = 'Copied';
+      navigator.clipboard.writeText(btn.dataset.value);
+      btn.classList.add('copied');
+      btn.querySelector('.text').innerText = copiedText;
+
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.querySelector('.text').innerText = prevText;
+      }, 2000)
+    }
+    const buttons = document.getElementsByClassName('copyable-button');
+
+    Array.from(buttons).forEach((btn) => {
+      btn.addEventListener('click', onButtonClicked);
+    });
+
+    // submit forms
+    const encode = (data) => {
+      return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+    }
+
+    function submitForm(event) {
+      event.preventDefault();
+      const form = event.target
+      const formObject = new FormData(form);
+      const email = formObject.get('email');
+
+      fetch('/', {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": form.name, email, })
+      })
+      const formWrapper = document.getElementById(form.name);
+      formWrapper.classList.add('form-submitted');
+
+      setTimeout(() => {
+        formWrapper.classList.remove('form-submitted');
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
