@@ -375,7 +375,7 @@ a {
   }
 }
 .publishers__subtitle {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 16px;
   line-height: 22px;
 
@@ -410,7 +410,7 @@ a {
   }
 }
 .integrate__subtitle {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 24px;
   line-height: 1.5;
   color: #333;
@@ -678,7 +678,7 @@ a {
   }
 }
 .community__subtitle {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 24px;
   line-height: 1.5;
   color: #333;
