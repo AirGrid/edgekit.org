@@ -260,6 +260,7 @@ a {
   padding: 20px 24px;
   display: flex;
   align-items: center;
+  white-space: nowrap;
 }
 @media screen and (max-width: 550px) {
   .intro__field-text {
@@ -1010,6 +1011,7 @@ a {
   padding: 20px 24px;
   display: flex;
   align-items: center;
+  white-space: nowrap;
 }
 @media screen and (max-width: 550px) {
   .get-started__field-text {
@@ -1074,6 +1076,7 @@ a {
   font-size: 12px;
   line-height: 1.2;
   color: #fff;
+  white-space: nowrap;
 }
 .get-started__access {
   margin-top: 64px;
@@ -1303,7 +1306,7 @@ a {
   font-weight: 400;
   font-size: 18px;
   line-height: 56px;
-  color: rgba(23, 23, 23, 0.5);
+  color: #171717;
   padding: 20px 24px;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
