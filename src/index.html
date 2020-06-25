@@ -86,6 +86,16 @@
       }
 
       @font-face {
+        font-family: "SFProDisplay";
+        src: local("SFProDisplay Light"), local("SFProDisplay-Light"),
+          url("fonts/SFProDisplay-Light.woff2") format("woff2"),
+          url("fonts/SFProDisplay-Light.woff") format("woff");
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
         font-family: "SFMono";
         src: local("SFMono Semibold"), local("SFMono-Semibold"),
           url("fonts/SFMono-Semibold.woff2") format("woff2"),
@@ -263,18 +273,21 @@
         line-height: 1;
         color: #000;
       }
+      .footer__logo img,
       .header__logo img {
         width: 122.04px;
         height: 24px;
         margin-top: 4px;
       }
       @media screen and (max-width: 768px) {
+        .footer__logo img,
         .header__logo img {
           width: 122.04px;
           height: 24px;
         }
       }
       @media screen and (max-width: 375px) {
+        .footer__logo img,
         .header__logo img {
           width: 101.7px;
           height: 20px;
@@ -297,6 +310,7 @@
         text-decoration: none;
         transition: color 0.1s linear;
       }
+      .footer .nav__link:last-child,
       .header .nav__link:last-child {
         margin-right: 0px;
       }
@@ -1557,11 +1571,29 @@
       }
     </style>
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon-16x16.png"
+    />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2c5ef6" />
+    <link
+      rel="mask-icon"
+      href="./images/safari-pinned-tab.svg"
+      color="#2c5ef6"
+    />
     <meta name="msapplication-TileColor" color="#2c5ef6" />
     <meta name="theme-color" color="#ffffff" />
     <title>EdgeKit</title>
@@ -1570,7 +1602,7 @@
   <body>
     <header class="container header">
       <div class="header__logo">
-        <img src="/logo.svg" aria-label="Logo" />
+        <img src="./images/title-logo.svg" aria-label="Logo" />
       </div>
 
       <nav class="nav">
@@ -2247,7 +2279,9 @@
     </section>
 
     <footer class="container footer">
-      <div class="footer__logo">EdgeKit</div>
+      <div class="footer__logo">
+        <img src="./images/title-logo.svg" aria-label="Logo" />
+      </div>
 
       <nav class="nav">
         <a
