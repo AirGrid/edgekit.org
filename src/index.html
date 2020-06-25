@@ -244,6 +244,19 @@
       }
       /* Header */
       /* =============== */
+      .header {
+        height: 72px;
+      }
+      @media screen and (max-width: 768px) {
+        .header {
+          height: 72px;
+        }
+      }
+      @media screen and (max-width: 375px) {
+        .header {
+          height: 56px;
+        }
+      }
       .header,
       .footer {
         padding-top: 24px;
@@ -259,6 +272,23 @@
         font-size: 16px;
         line-height: 1;
         color: #000;
+      }
+      .header__logo img {
+        width: 122.04px;
+        height: 24px;
+        margin-top: 4px;
+      }
+      @media screen and (max-width: 768px) {
+        .header__logo img {
+          width: 122.04px;
+          height: 24px;
+        }
+      }
+      @media screen and (max-width: 375px) {
+        .header__logo img {
+          width: 101.7px;
+          height: 20px;
+        }
       }
       .nav {
         font-size: 16px;
@@ -1546,7 +1576,9 @@
 
   <body>
     <header class="container header">
-      <div class="header__logo">EdgeKit</div>
+      <div class="header__logo">
+        <img src="/logo.svg" aria-label="Logo" />
+      </div>
 
       <nav class="nav">
         <a
