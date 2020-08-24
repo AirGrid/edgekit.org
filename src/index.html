@@ -241,6 +241,7 @@
       .header {
         max-width: 1680px;
         height: 72px;
+        background-color: #ffffff;
       }
       @media screen and (max-width: 768px) {
         .header {
@@ -294,6 +295,23 @@
         line-height: 16px;
         display: flex;
         align-items: center;
+
+        width: 100%;
+        max-width: calc(1024px + 64px);
+        padding: 0 32px;
+        margin: 0 auto;
+      }
+      @media screen and (max-width: 1024px) {
+        .nav {
+          width: initial;
+          padding: 0 44px 0 28px;
+          margin: 0;
+        }
+      }
+      @media screen and (max-width: 767px) {
+        .nav {
+          padding: 0;
+        }
       }
       .nav__link {
         display: inline-block;
@@ -319,29 +337,106 @@
           margin: 0 12px;
         }
       }
+      /* BURGER */
       .nav__burger {
         width: 28px;
         height: 28px;
         background: #171717;
         border-radius: 4px;
-        padding: 6px;
+        padding: 7px 5px;
+        margin-left: 12px;
+        transition: background-color .2s;
       }
       .nav__burger:hover {
         cursor: pointer;
       }
-      .nav__burger.nav__burger--closed {
-        padding: 6.6px 5px;
-      }
-      .nav__burger--closed  .nav__burger_close{
+      body.burger-menu-open .nav__burger_open{
         display: none;
       }
-      .nav__burger--opened  .nav__burger_open{
-        display: none;
+      body.burger-menu-open .nav__burger_close{
+        display: block;
       }
-      .nav__burger--opened {
+      body.burger-menu-open .nav__burger {
+        padding: 6px;
         border: 1px solid #CFCECE;
         background: #ffffff;
       }
+      .nav__burger_close{
+        display: none;
+      }
+      .menu-mobile {
+        opacity: 0;
+        transition: all .2s;
+        background-color: #324069;
+        position: fixed;
+        top: 72px;
+        width: 100%;
+        height: calc(100% - 72px);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+      @media screen and (max-width: 375px){
+        .menu-mobile {
+          top: 56px;
+          height: calc(100% - 56px);
+        }
+      }
+
+      .nav-mobile-buttons {
+        width: 100%;
+        padding: 16px;
+      }
+      .menu-mobile .nav-mobile, .menu-mobile .nav-mobile-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .menu-mobile .nav-mobile {
+        flex: 6;
+      }
+      .menu-mobile .nav-mobile .nav__link {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 16px;
+        margin: 28px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      @media screen and (max-height: 500px){
+        .menu-mobile .nav-mobile {
+          flex-direction: row;
+        }
+        .menu-mobile .nav-mobile .nav__link {
+          margin: 12px;
+        }
+      }
+      .menu-mobile .nav-mobile .nav__link--active{
+        color: #FFFFFF;
+      }
+      .menu-mobile .nav-mobile-buttons .button {
+        width: 100%;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 16px;
+        padding: 19px;
+        margin: 6px 0;
+      }
+      body.burger-menu-open {
+        overflow: hidden;
+        position: relative;
+      }
+      body.burger-menu-open .header{
+        position: fixed;
+        top: 0;
+      }
+      body.burger-menu-open .menu-mobile {
+        opacity: 1;
+      }
+      /* !END BURGER */
       .footer .nav__link:first-child,
       .header .nav__link:first-child {
         margin-left: 0;
@@ -367,6 +462,7 @@
         box-sizing: border-box;
         border-radius: 6px;
 
+        color: #ffffff;
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
@@ -378,8 +474,10 @@
         width: 81px;
         text-align: center;
       }
+      .button--white {
+        color: #000000;
+      }
       .button--black {
-        color: #ffffff;
         background: #171717;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
@@ -1255,7 +1353,7 @@
       .get-started__wrapper {
         display: flex;
         align-items: center;
-        max-width: 676px;
+        max-width: 760px;
       }
       @media screen and (max-width: 950px) {
         .get-started__wrapper {
@@ -1353,7 +1451,7 @@
         font-size: 12px;
         line-height: 1.2;
         color: #fff;
-        white-space: nowrap;
+        word-break: break-word;
       }
       .get-started__access {
         margin-top: 64px;
@@ -1683,7 +1781,7 @@
         <img src="./images/title-logo.svg" aria-label="Logo" />
       </div>
 
-      <nav class="container nav">
+      <nav class="nav">
         <a class="nav__link nav__link--active only_desktop"
            href="https://edgekit.org/">Home</a>
         <a class="nav__link only_desktop"
@@ -1713,7 +1811,7 @@
                   fill="currentColor" />
           </svg>
         </a>
-        <span class="nav__burger nav__burger--closed only_mobile">
+        <span class="nav__burger only_mobile" onclick="showBurgerMenu()">
           <i class="nav__burger_open">
             <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 1C0 0.447715 0.447715 0 1 0H17C17.5523 0 18 0.447715 18 1C18 1.55228 17.5523 2 17 2H1C0.447716 2 0 1.55228 0 1Z"
@@ -1734,8 +1832,8 @@
           </i>
         </span>
       </nav>
-      <nav class="nav only_desktop">
-        <a class="button button--outline">
+      <nav class="nav-buttons only_desktop">
+        <a class="button button--outline button--white">
           Log in
         </a>
         <a class="button button--black">
@@ -1743,8 +1841,30 @@
         </a>
       </nav>
     </header>
-    <div class="menu_mobile only_mobile">
-      TODO: menu
+    <div class="menu-mobile">
+      <nav class="nav-mobile">
+        <a class="nav__link nav__link--active"
+           href="https://edgekit.org/">Home</a>
+        <a class="nav__link"
+           href="https://edgekit.org/platform.html">Platform</a>
+        <a
+          class="nav__link"
+          href="https://github.com/AirGrid/edgekit"
+          target="_blank"
+          rel="noreferrer"
+        >Docs</a
+        >
+        <a class="nav__link" href="#" rel="noreferrer">Blog</a>
+      </nav>
+
+      <nav class="nav-mobile-buttons">
+        <a class="button button--outline">
+          Log in
+        </a>
+        <a class="button button--black">
+          Sign up
+        </a>
+      </nav>
     </div>
 
     <section class="intro">
@@ -2473,6 +2593,16 @@
         setTimeout(() => {
           formWrapper.classList.remove("form-submitted");
         }, 5000);
+      }
+
+      function showBurgerMenu() {
+        const body = document.body;
+
+        if(body.classList.contains('burger-menu-open')) {
+          body.classList.remove('burger-menu-open')
+        } else {
+          body.classList.add('burger-menu-open');
+        }
       }
     </script>
   </body>
