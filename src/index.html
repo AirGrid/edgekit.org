@@ -319,6 +319,29 @@
           margin: 0 12px;
         }
       }
+      .nav__burger {
+        width: 28px;
+        height: 28px;
+        background: #171717;
+        border-radius: 4px;
+        padding: 6px;
+      }
+      .nav__burger:hover {
+        cursor: pointer;
+      }
+      .nav__burger.nav__burger--closed {
+        padding: 6.6px 5px;
+      }
+      .nav__burger--closed  .nav__burger_close{
+        display: none;
+      }
+      .nav__burger--opened  .nav__burger_open{
+        display: none;
+      }
+      .nav__burger--opened {
+        border: 1px solid #CFCECE;
+        background: #ffffff;
+      }
       .footer .nav__link:first-child,
       .header .nav__link:first-child {
         margin-left: 0;
@@ -363,7 +386,7 @@
       .button--outline {
         border-radius: 6px;
         box-sizing: border-box;
-        border: 1px solid #CFCECE;;
+        border: 1px solid #CFCECE;
       }
 
       /* INTRO */
@@ -1690,6 +1713,26 @@
                   fill="currentColor" />
           </svg>
         </a>
+        <span class="nav__burger nav__burger--closed only_mobile">
+          <i class="nav__burger_open">
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 1C0 0.447715 0.447715 0 1 0H17C17.5523 0 18 0.447715 18 1C18 1.55228 17.5523 2 17 2H1C0.447716 2 0 1.55228 0 1Z"
+                    fill="white" />
+              <path d="M0 7C0 6.44771 0.447715 6 1 6H17C17.5523 6 18 6.44771 18 7C18 7.55228 17.5523 8 17 8H1C0.447716 8 0 7.55228 0 7Z"
+                    fill="white" />
+              <path d="M1 12C0.447715 12 0 12.4477 0 13C0 13.5523 0.447716 14 1 14H17C17.5523 14 18 13.5523 18 13C18 12.4477 17.5523 12 17 12H1Z"
+                    fill="white" />
+            </svg>
+          </i>
+          <i class="nav__burger_close">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.707711 0.707106C1.09823 0.316582 1.7314 0.316582 2.12192 0.707106L13.4356 12.0208C13.8262 12.4113 13.8262 13.0445 13.4356 13.435C13.0451 13.8256 12.4119 13.8256 12.0214 13.435L0.707711 2.12132C0.317187 1.7308 0.317186 1.09763 0.707711 0.707106Z"
+                    fill="#171717" />
+              <path d="M0.706956 13.7071C0.316431 13.3166 0.316431 12.6834 0.706956 12.2929L12.0207 0.979187C12.4112 0.588663 13.0444 0.588662 13.4349 0.979186C13.8254 1.36971 13.8254 2.00288 13.4349 2.3934L2.12117 13.7071C1.73065 14.0976 1.09748 14.0976 0.706956 13.7071Z"
+                    fill="#171717" />
+            </svg>
+          </i>
+        </span>
       </nav>
       <nav class="nav only_desktop">
         <a class="button button--outline">
@@ -1699,10 +1742,10 @@
           Sign up
         </a>
       </nav>
-      <nav class="nav_mobile only_mobile">
-
-      </nav>
     </header>
+    <div class="menu_mobile only_mobile">
+      TODO: menu
+    </div>
 
     <section class="intro">
       <div class="container">
