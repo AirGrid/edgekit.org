@@ -267,7 +267,7 @@
         font-size: 16px;
         line-height: 1;
         color: #000;
-        width: 160px;
+        width: 180px;
       }
       .footer__logo img,
       .header__logo img {
@@ -290,7 +290,7 @@
         }
       }
       .nav {
-        font-size: 16px;
+        font-size: 14px;
         line-height: 16px;
         display: flex;
         align-items: center;
@@ -298,17 +298,34 @@
       .nav__link {
         display: inline-block;
         vertical-align: top;
-        margin: 0 15px;
+        margin: 0 20px;
         position: relative;
         font-weight: 500;
 
-        color: #000;
+        color: #8B8B8B;
         text-decoration: none;
         transition: color 0.1s linear;
       }
+      .nav__link--active {
+        color: #171717;
+        border-bottom: 3px solid;
+        padding: 6px 0;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        border-color: #939393;
+      }
+      @media screen and (max-width: 860px)  {
+        .nav__link  {
+          margin: 0 12px;
+        }
+      }
+      .footer .nav__link:first-child,
+      .header .nav__link:first-child {
+        margin-left: 0;
+      }
       .footer .nav__link:last-child,
       .header .nav__link:last-child {
-        margin-right: 0px;
+        margin-right: 0;
       }
       @media screen and (max-width: 450px) {
         .nav__link {
@@ -1593,6 +1610,20 @@
       .sign-up__form-submit:hover {
         background-color: #2c5ef6;
       }
+      /* Responsive */
+      .only_desktop {
+        display: none;
+      }
+      @media screen and (min-width: 768px) {
+        .only_desktop {
+          display: inherit;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        .only_mobile {
+          display: none;
+        }
+      }
     </style>
     <!-- Favicon -->
     <link
@@ -1630,18 +1661,18 @@
       </div>
 
       <nav class="container nav">
-        <a class="nav__link"
+        <a class="nav__link nav__link--active only_desktop"
            href="https://github.com/AirGrid/edgekit">Home</a>
-        <a class="nav__link"
+        <a class="nav__link only_desktop"
            href="https://github.com/AirGrid/edgekit">Platform</a>
         <a
-          class="nav__link"
+          class="nav__link only_desktop"
           href="https://github.com/AirGrid/edgekit"
           target="_blank"
           rel="noreferrer"
         >Docs</a
         >
-        <a class="nav__link" href="#" rel="noreferrer">Blog</a>
+        <a class="nav__link only_desktop" href="#" rel="noreferrer">Blog</a>
         <a
           class="nav__link"
           href="https://github.com/AirGrid/edgekit"
@@ -1672,13 +1703,16 @@
           </svg>
         </a>
       </nav>
-      <nav class="nav">
+      <nav class="nav only_desktop">
         <a class="button button--outline">
           Log in
         </a>
         <a class="button button--black">
           Sign up
         </a>
+      </nav>
+      <nav class="nav_mobile only_mobile">
+
       </nav>
     </header>
 
