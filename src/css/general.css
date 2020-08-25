@@ -634,6 +634,11 @@ p {
         font-size: 32px;
         line-height: 32px;
     }
+    h3 {
+        /* TODO: test manually */
+        font-size: 32px;
+        line-height: 32px;
+    }
     p {
         font-size: 20px;
         line-height: 32px;

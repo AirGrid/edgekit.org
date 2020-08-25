@@ -338,7 +338,6 @@
         .integrate--title {
           font-size: 32px;
           line-height: 40px;
-          max-width: 235px;
         }
       }
       .integrate__subtitle {
@@ -348,11 +347,6 @@
       @media screen and (max-width: 990px) {
         .integrate__subtitle br {
           display: none;
-        }
-      }
-      @media screen and (max-width: 405px) {
-        .integrate__subtitle {
-          max-width: 320px;
         }
       }
       @media screen and (max-width: 550px) {
@@ -706,6 +700,7 @@
       @media screen and (max-width: 750px) {
         .code-line {
           font-size: 12px;
+          line-height: 32px;
           padding-left: 28px;
         }
       }
@@ -852,6 +847,11 @@
       }
       .subscribe__link:not(:last-child) {
         margin-bottom: 24px;
+      }
+      @media screen and (max-width: 425px) {
+        .subscribe__link:not(:last-child) {
+          margin-bottom: 16px;
+        }
       }
       /* GET-STARTED */
       /* ================= */
