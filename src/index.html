@@ -12,346 +12,41 @@
       content="privacy,advertising,edgekit,airgrid,edge,cookie-less,ml,ai,prebid,rtb,programmatic"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="css/general.css">
     <style>
-      /* cyrillic-ext */
-      @font-face {
-        font-family: "Source Code Pro";
-        font-style: normal;
-        font-weight: 500;
-        font-display: swap;
-        src: local("Source Code Pro Medium"), local("SourceCodePro-Medium"),
-        url(https://fonts.gstatic.com/s/sourcecodepro/v11/HI_XiYsKILxRpg3hIP6sJ7fM7PqtzsjDvucq7Gq0DDzS.woff2) format("woff2");
-        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
-        U+A640-A69F, U+FE2E-FE2F;
+      .header {
+        background-color: #ffffff;
       }
-      /* cyrillic */
-      @font-face {
-        font-family: "Source Code Pro";
-        font-style: normal;
-        font-weight: 500;
-        font-display: swap;
-        src: local("Source Code Pro Medium"), local("SourceCodePro-Medium"),
-        url(https://fonts.gstatic.com/s/sourcecodepro/v11/HI_XiYsKILxRpg3hIP6sJ7fM7PqtzsjDt-cq7Gq0DDzS.woff2) format("woff2");
-        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      .nav__link {
+        color: #8B8B8B;
       }
-      /* greek */
-      @font-face {
-        font-family: "Source Code Pro";
-        font-style: normal;
-        font-weight: 500;
-        font-display: swap;
-        src: local("Source Code Pro Medium"), local("SourceCodePro-Medium"),
-        url(https://fonts.gstatic.com/s/sourcecodepro/v11/HI_XiYsKILxRpg3hIP6sJ7fM7PqtzsjDsOcq7Gq0DDzS.woff2) format("woff2");
-        unicode-range: U+0370-03FF;
+      .nav__link--active {
+        color: #171717;
+        border-color: rgba(23, 23, 23, 0.3);
+        box-shadow: 0 1px #C8C8C8;
       }
-      /* vietnamese */
-      @font-face {
-        font-family: "Source Code Pro";
-        font-style: normal;
-        font-weight: 500;
-        font-display: swap;
-        src: local("Source Code Pro Medium"), local("SourceCodePro-Medium"),
-        url(https://fonts.gstatic.com/s/sourcecodepro/v11/HI_XiYsKILxRpg3hIP6sJ7fM7PqtzsjDvOcq7Gq0DDzS.woff2) format("woff2");
-        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
-        U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+      body.burger-menu-open .header {
+        transition: all .2s;
+        background: #ffffff;
       }
-      /* latin-ext */
-      @font-face {
-        font-family: "Source Code Pro";
-        font-style: normal;
-        font-weight: 500;
-        font-display: swap;
-        src: local("Source Code Pro Medium"), local("SourceCodePro-Medium"),
-        url(https://fonts.gstatic.com/s/sourcecodepro/v11/HI_XiYsKILxRpg3hIP6sJ7fM7PqtzsjDvecq7Gq0DDzS.woff2) format("woff2");
-        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
-        U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      body.burger-menu-open .nav__burger {
+        padding: 6px;
+        border: 1px solid #CFCECE;
       }
-      /* latin */
-      @font-face {
-        font-family: "Source Code Pro";
-        font-style: normal;
-        font-weight: 500;
-        font-display: swap;
-        src: local("Source Code Pro Medium"), local("SourceCodePro-Medium"),
-        url(https://fonts.gstatic.com/s/sourcecodepro/v11/HI_XiYsKILxRpg3hIP6sJ7fM7PqtzsjDs-cq7Gq0DA.woff2) format("woff2");
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-        U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
-        U+2212, U+2215, U+FEFF, U+FFFD;
+      .menu-mobile .nav-mobile .nav__link:hover {
+        color: #2c5ef6;
       }
-
-      @font-face {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 100;
-        font-display: swap;
-        src: local('Inter'),
-        url('fonts/Inter/Inter-Thin.woff2') format('woff2'),
-        url('fonts/Inter/Inter-Thin.woff') format('woff');
+      .nav__link:hover {
+        color: #2c5ef6;
       }
-      @font-face {
-        font-family: 'Inter';
-        font-style: italic;
-        font-weight: 100;
-        font-display: swap;
-        src: local('Inter'),
-        url('fonts/Inter/Inter-ThinItalic.woff2') format('woff2'),
-        url('fonts/Inter/Inter-ThinItalic.woff') format('woff');
+      .button--white {
+        color: #000000;
       }
-
-      @font-face {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 200;
-        font-display: swap;
-        src: local('Inter'),
-        url('fonts/Inter/Inter-ExtraLight.woff2') format('woff2'),
-        url('fonts/Inter/Inter-ExtraLight.woff') format('woff');
-      }
-      @font-face {
-        font-family: 'Inter';
-        font-style: italic;
-        font-weight: 200;
-        font-display: swap;
-        src: local('Inter'),
-        url('fonts/Inter/Inter-ExtraLightItalic.woff2') format('woff2'),
-        url('fonts/Inter/Inter-ExtraLightItalic.woff') format('woff');
-      }
-
-      @font-face {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 300;
-        font-display: swap;
-        src: local('Inter'),
-        url('fonts/Inter/Inter-Light.woff2') format('woff2'),
-        url('fonts/Inter/Inter-Light.woff') format('woff');
-      }
-      @font-face {
-        font-family: 'Inter';
-        font-style: italic;
-        font-weight: 300;
-        font-display: swap;
-        src: local('Inter'),
-        url('fonts/Inter/Inter-LightItalic.woff2') format('woff2'),
-        url('fonts/Inter/Inter-LightItalic.woff') format('woff');
-      }
-
-      @font-face {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: local('Inter'),
-        url('fonts/Inter/Inter-Regular.woff2') format('woff2'),
-        url('fonts/Inter/Inter-Regular.woff') format('woff');
-      }
-      @font-face {
-        font-family: 'Inter';
-        font-style: italic;
-        font-weight: 400;
-        font-display: swap;
-        src: local('Inter'),
-        url('fonts/Inter/Inter-Italic.woff2') format('woff2'),
-        url('fonts/Inter/Inter-Italic.woff') format('woff');
-      }
-
-      @font-face {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 500;
-        font-display: swap;
-        src: local('Inter'),
-        url('fonts/Inter/Inter-Medium.woff2') format('woff2'),
-        url('fonts/Inter/Inter-Medium.woff') format('woff');
-      }
-      @font-face {
-        font-family: 'Inter';
-        font-style: italic;
-        font-weight: 500;
-        font-display: swap;
-        src: local('Inter'),
-        url('fonts/Inter/Inter-MediumItalic.woff2') format('woff2'),
-        url('fonts/Inter/Inter-MediumItalic.woff') format('woff');
-      }
-
-      @font-face {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        font-display: swap;
-        src: local('Inter'),
-        url('fonts/Inter/Inter-SemiBold.woff2') format('woff2'),
-        url('fonts/Inter/Inter-SemiBold.woff') format('woff');
-      }
-      @font-face {
-        font-family: 'Inter';
-        font-style: italic;
-        font-weight: 600;
-        font-display: swap;
-        src: local('Inter'),
-        url('fonts/Inter/Inter-SemiBoldItalic.woff2') format('woff2'),
-        url('fonts/Inter/Inter-SemiBoldItalic.woff') format('woff');
-      }
-
-      @font-face {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 700;
-        font-display: swap;
-        src: local('Inter'),
-        url('fonts/Inter/Inter-Bold.woff2') format('woff2'),
-        url('fonts/Inter/Inter-Bold.woff') format('woff');
-      }
-      @font-face {
-        font-family: 'Inter';
-        font-style: italic;
-        font-weight: 700;
-        font-display: swap;
-        src: local('Inter'),
-        url('fonts/Inter/Inter-BoldItalic.woff2') format('woff2'),
-        url('fonts/Inter/Inter-BoldItalic.woff') format('woff');
-      }
-
-      @font-face {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 800;
-        font-display: swap;
-        src: local('Inter'),
-        url('fonts/Inter/Inter-ExtraBold.woff2') format('woff2'),
-        url('fonts/Inter/Inter-ExtraBold.woff') format('woff');
-      }
-      @font-face {
-        font-family: 'Inter';
-        font-style: italic;
-        font-weight: 800;
-        font-display: swap;
-        src: local('Inter'),
-        url('fonts/Inter/Inter-ExtraBoldItalic.woff2') format('woff2'),
-        url('fonts/Inter/Inter-ExtraBoldItalic.woff') format('woff');
-      }
-
-      @font-face {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 900;
-        font-display: swap;
-        src: local('Inter'),
-        url('fonts/Inter/Inter-Black.woff2') format('woff2'),
-        url('fonts/Inter/Inter-Black.woff') format('woff');
-      }
-      @font-face {
-        font-family: 'Inter';
-        font-style: italic;
-        font-weight: 900;
-        font-display: swap;
-        src: local('Inter'),
-        url('fonts/Inter/Inter-BlackItalic.woff2') format('woff2'),
-        url('fonts/Inter/Inter-BlackItalic.woff') format('woff');
-      }
-
-      @font-face {
-        font-family: "SFMono";
-        src: local("SFMono Semibold"), local("SFMono-Semibold"),
-        url("fonts/SFMono-Semibold.woff2") format("woff2"),
-        url("fonts/SFMono-Semibold.woff") format("woff");
-        font-weight: 600;
-        font-style: normal;
-        font-display: swap;
-      }
-
-      @font-face {
-        font-family: "SFMono";
-        src: local("SFMono Regular"), local("SFMono-Regular"),
-        url("fonts/SFMono-Regular.woff2") format("woff2"),
-        url("fonts/SFMono-Regular.woff") format("woff");
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-      }
-
-      @font-face {
-        font-family: "SFMono";
-        src: local("SFMono Light"), local("SFMono-Light"),
-        url("fonts/SFMono-Light.woff2") format("woff2"),
-        url("fonts/SFMono-Light.woff") format("woff");
-        font-weight: 300;
-        font-style: normal;
-        font-display: swap;
-      }
-      body {
-        margin: 0;
-        font-family: "Inter";
-        font-style: normal;
-        letter-spacing: -0.02em;
-      }
-      *,
-      *::before,
-      *:after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      p {
-        margin: 0;
-      }
-      a {
-        text-decoration: none;
-        color: #000;
-      }
-      .container {
-        width: 100%;
-        max-width: calc(1024px + 64px);
-        padding: 0 32px;
-        margin: 0 auto;
-      }
-      .container--large {
-        width: 100%;
-        max-width: calc(1456px + 64px);
-        padding: 0 32px;
-        margin: 0 auto;
-      }
-      @media screen and (max-width: 550px) {
-        .container,
-        .container--large {
-          max-width: calc(1024px + 32px);
-          padding: 0 16px;
-        }
-      }
-      .section {
-        margin-bottom: 216px;
-      }
-      @media screen and (max-width: 768px) {
-        .section {
-          margin-bottom: 180px;
-        }
-      }
-      @media screen and (max-width: 550px) {
-        .section {
-          margin-bottom: 96px;
-        }
-      }
-      .section__subtitle {
-        font-weight: 300;
-        font-size: 24px;
-        line-height: 36px;
-        margin-top: 24px;
-        color: #333;
+      .button--outline {
+        border: 1px solid #CFCECE;
       }
       .section__title {
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 48px;
-
         color: #dadae2;
-
         margin-bottom: 64px;
       }
       @media screen and (max-width: 768px) {
@@ -359,279 +54,6 @@
           margin-bottom: 24px;
         }
       }
-      @media screen and (max-width: 550px) {
-        .section__title {
-          font-size: 32px;
-          line-height: 1;
-        }
-      }
-      .section__icon {
-        margin-top: 30px;
-      }
-      /* Header */
-      /* =============== */
-      .header {
-        max-width: 1680px;
-        height: 72px;
-        background-color: #ffffff;
-      }
-      @media screen and (max-width: 768px) {
-        .header {
-          height: 72px;
-        }
-      }
-      @media screen and (max-width: 375px) {
-        .header {
-          height: 56px;
-        }
-      }
-      .header,
-      .footer {
-        padding-top: 24px;
-        padding-bottom: 24px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .footer__logo,
-      .header__logo {
-        font-family: "Source Code Pro";
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 1;
-        color: #000;
-        width: 180px;
-      }
-      .footer__logo img,
-      .header__logo img {
-        width: 122.04px;
-        height: 24px;
-        margin-top: 4px;
-      }
-      @media screen and (max-width: 768px) {
-        .footer__logo img,
-        .header__logo img {
-          width: 122.04px;
-          height: 24px;
-        }
-      }
-      @media screen and (max-width: 375px) {
-        .footer__logo img,
-        .header__logo img {
-          width: 101.7px;
-          height: 20px;
-        }
-      }
-      .nav {
-        font-size: 14px;
-        line-height: 16px;
-        display: flex;
-        align-items: center;
-
-        width: 100%;
-        max-width: calc(1024px + 64px);
-        padding: 0 32px;
-        margin: 0 auto;
-      }
-      @media screen and (max-width: 1024px) {
-        .nav {
-          width: initial;
-          padding: 0 44px 0 28px;
-          margin: 0;
-        }
-      }
-      @media screen and (max-width: 767px) {
-        .nav {
-          padding: 0;
-        }
-      }
-      .nav__link {
-        display: inline-block;
-        vertical-align: top;
-        margin: 0 20px;
-        position: relative;
-        font-weight: 500;
-
-        color: #8B8B8B;
-        text-decoration: none;
-        transition: color 0.1s linear;
-      }
-      .nav__link--active {
-        color: #171717;
-        border-bottom: 2px solid;
-        padding: 6px 0;
-        border-color: rgba(23, 23, 23, 0.3);
-        box-shadow: 0 1px #C8C8C8;
-      }
-      @media screen and (max-width: 860px) {
-        .nav__link {
-          margin: 0 12px;
-        }
-      }
-      /* BURGER */
-      .nav__burger {
-        width: 28px;
-        height: 28px;
-        background: #171717;
-        border-radius: 4px;
-        padding: 7px 5px;
-        margin-left: 12px;
-        transition: background-color .2s;
-      }
-      .nav__burger:hover {
-        cursor: pointer;
-      }
-      body.burger-menu-open .nav__burger_open {
-        display: none;
-      }
-      body.burger-menu-open .nav__burger_close {
-        display: block;
-      }
-      body.burger-menu-open .nav__burger {
-        padding: 6px;
-        border: 1px solid #CFCECE;
-        background: #ffffff;
-      }
-      .nav__burger_close {
-        display: none;
-      }
-      .menu-mobile {
-        opacity: 0;
-        transition: all .2s;
-        background-color: #324069;
-        position: fixed;
-        top: 72px;
-        width: 100%;
-        height: 0;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-      }
-      @media screen and (max-width: 375px) {
-        .menu-mobile {
-          top: 56px;
-          height: calc(100% - 56px);
-        }
-      }
-
-      .nav-mobile-buttons {
-        width: 100%;
-        padding: 16px;
-      }
-      .menu-mobile .nav-mobile, .menu-mobile .nav-mobile-buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-      .menu-mobile .nav-mobile, .menu-mobile .nav-mobile-buttons {
-        display: none;
-      }
-      .menu-mobile .nav-mobile {
-        flex: 6;
-      }
-      .menu-mobile .nav-mobile .nav__link {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 22px;
-        line-height: 16px;
-        margin: 28px;
-        color: rgba(255, 255, 255, 0.5);
-      }
-      .menu-mobile .nav-mobile .nav__link:hover {
-        color: #2c5ef6;
-      }
-      @media screen and (max-height: 500px) {
-        .menu-mobile .nav-mobile {
-          flex-direction: row;
-        }
-        .menu-mobile .nav-mobile .nav__link {
-          margin: 12px;
-        }
-      }
-      .menu-mobile .nav-mobile .nav__link--active {
-        box-shadow: none;
-        border-color: rgba(255, 255, 255, 0.5);
-        color: #FFFFFF;
-      }
-      .menu-mobile .nav-mobile-buttons .button {
-        width: 100%;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 16px;
-        padding: 19px;
-        margin: 6px 0;
-      }
-      body.burger-menu-open {
-        overflow: hidden;
-        position: relative;
-      }
-      body.burger-menu-open .menu-mobile {
-        height: calc(100% - 72px);
-        opacity: 1;
-      }
-      body.burger-menu-open .menu-mobile .nav-mobile, body.burger-menu-open .menu-mobile .nav-mobile-buttons {
-        display: flex;
-      }
-      /* !END BURGER */
-      .footer .nav__link:first-child,
-      .header .nav__link:first-child {
-        margin-left: 0;
-      }
-      .footer .nav__link:last-child,
-      .header .nav__link:last-child {
-        margin-right: 0;
-      }
-      @media screen and (max-width: 450px) {
-        .nav__link {
-          margin: 0 10px;
-        }
-      }
-      .nav__link:hover {
-        color: #2c5ef6;
-      }
-      .nav__link svg {
-        width: 18px;
-      }
-      /* BUTTON */
-      /* ================== */
-      .button {
-        box-sizing: border-box;
-        border-radius: 6px;
-
-        color: #ffffff;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 16px;
-        letter-spacing: -0.02em;
-
-        padding: 12px 16px;
-        margin: 0 8px;
-        width: 81px;
-        text-align: center;
-        transition: all 0.2s;
-      }
-      .button:hover {
-        cursor: pointer;
-        background: #2c5ef6;
-        color: #ffffff;
-      }
-      .button--white {
-        color: #000000;
-      }
-      .button--black {
-        background: #171717;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-      .button--outline {
-        border-radius: 6px;
-        box-sizing: border-box;
-        border: 1px solid #CFCECE;
-      }
-
       /* INTRO */
       /* ================== */
       .intro {
@@ -649,7 +71,7 @@
         color: #000;
         font-size: 74px;
         font-weight: 700;
-        line-height: 1;
+        line-height: 68px;
         margin-bottom: 32px;
         display: flex;
         align-items: flex-start;
@@ -672,8 +94,8 @@
       }
       .intro__subtitle {
         font-weight: 300;
-        font-size: 24px;
-        line-height: 36px;
+        font-size: 22px;
+        line-height: 34px;
         margin-bottom: 40px;
         max-width: 540px;
       }
@@ -874,8 +296,8 @@
       }
       .publishers__title {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 30px;
+        font-size: 20px;
+        line-height: 28px;
       }
       .publishers__title-br-mobile {
         display: none;
@@ -886,12 +308,11 @@
         }
       }
       .publishers__subtitle {
-        font-weight: 300;
-        font-size: 16px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
         line-height: 22px;
-
         color: #505050;
-
         margin-top: 16px;
       }
       .publishers__subtitle--br-375 {
@@ -921,9 +342,6 @@
         }
       }
       .integrate__subtitle {
-        font-weight: 300;
-        font-size: 24px;
-        line-height: 1.5;
         color: #333;
         margin-top: 24px;
       }
@@ -939,8 +357,6 @@
       }
       @media screen and (max-width: 550px) {
         .integrate__subtitle {
-          font-size: 20px;
-          line-height: 32px;
           margin-top: 16px;
         }
       }
@@ -1032,9 +448,6 @@
         position: absolute;
         top: 40px;
         right: 40px;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 1.5;
         text-align: right;
         color: rgba(51, 51, 51, 0.3);
       }
@@ -1179,7 +592,7 @@
         }
       }
       .community__content {
-        max-width: 676px;
+        max-width: 643px;
         margin-right: 24px;
       }
       @media screen and (max-width: 768px) {
@@ -1189,9 +602,6 @@
         }
       }
       .community__subtitle {
-        font-weight: 300;
-        font-size: 24px;
-        line-height: 1.5;
         color: #333;
         margin-bottom: 24px;
       }
@@ -1209,10 +619,10 @@
           margin-bottom: 16px;
         }
       }
-      .community__descr {
+      .community__descr p {
         font-weight: normal;
         font-size: 16px;
-        line-height: 1.4;
+        line-height: 26px;
         color: #505050;
       }
       .community__descr a {
@@ -1400,8 +810,8 @@
       }
       .subscribe__link {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 1.3;
+        font-size: 22px;
+        line-height: 36px;
         color: #171717;
         display: flex;
         align-items: center;
@@ -1601,8 +1011,8 @@
       .get-started__access {
         margin-top: 64px;
         font-weight: 600;
-        font-size: 24px;
-        line-height: 1.3;
+        font-size: 22px;
+        line-height: 36px;
         color: #fff;
         display: inline-flex;
         align-items: center;
@@ -1678,11 +1088,8 @@
         margin-bottom: 32px;
       }
       .deployment__title {
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 1.2;
         color: #fff;
-        max-width: 550px;
+        max-width: 672px;
         margin-bottom: 64px;
       }
       @media screen and (max-width: 550px) {
@@ -1738,15 +1145,15 @@
       }
       .deployment__item-text {
         font-weight: 400;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 1.37;
         color: rgba(255, 255, 255, 0.7);
       }
       .deployment__more {
         margin-top: 64px;
         font-weight: 600;
-        font-size: 24px;
-        line-height: 1.3;
+        font-size: 22px;
+        line-height: 36px;
         color: #fff;
         display: inline-flex;
         align-items: center;
@@ -1784,9 +1191,6 @@
         }
       }
       .sign-up__title {
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 1.2;
         color: #171717;
         margin-bottom: 40px;
       }
@@ -1857,7 +1261,7 @@
         border-top-right-radius: 6px;
         border-bottom-right-radius: 6px;
         background-color: #171717;
-        font-weight: 500;
+        font-weight: 600;
         font-size: 18px;
         line-height: 16px;
         color: #fff;
@@ -2031,8 +1435,7 @@
           </h1>
           <h2 class="intro__subtitle">
             An open source, privacy focused client side library <br />
-            for the creation and monetisation of online <br />
-            audiences.
+            for the creation and monetisation of online audiences.
           </h2>
           <div class="intro__field">
             <div class="intro__field-text">$ npm i -S edgekit</div>
@@ -2077,10 +1480,10 @@
         <div class="publishers">
           <div class="publishers__item publishers__item--data">
             <div class="publishers__content">
-              <h3 class="publishers__title">
-                Take back control <br class="publishers__title-br-mobile" />
+              <h4 class="publishers__title">
+                Take back control <br />
                 of your first party data
-              </h3>
+              </h4>
               <p class="publishers__subtitle">
                 Monetise your 1st party data without reliance on third party
                 aggregators or adtech middlemen.
@@ -2093,10 +1496,10 @@
 
           <div class="publishers__item publishers__item--protect">
             <div class="publishers__content">
-              <h3 class="publishers__title">
-                Protect the privacy <br class="publishers__title-br-mobile" />
+              <h4 class="publishers__title">
+                Protect the privacy <br />
                 of your audience
-              </h3>
+              </h4>
               <p class="publishers__subtitle">
                 Your user’s data is not shared with any 3rd parties, all
                 information is stored and processed on the individual’s device.
@@ -2112,10 +1515,10 @@
 
           <div class="publishers__item publishers__item--earn">
             <div class="publishers__content">
-              <h3 class="publishers__title">
-                Earn more from <br class="publishers__title-br-mobile" />
+              <h4 class="publishers__title">
+                Earn more from <br />
                 online advertising
-              </h3>
+              </h4>
               <p class="publishers__subtitle">
                 Attach cookie-less audience signals
                 <br class="publishers__subtitle--br-375" />
@@ -2341,9 +1744,9 @@
       <div class="container">
         <div class="subscribe">
           <div class="subscribe__header">
-            <h2 class="section__title subscribe__title">
+            <h3 class="section__title subscribe__title">
               Join the community.
-            </h2>
+            </h3>
             <h2 class="section__title section__title--black subscribe__title">
               Sign up for news.
             </h2>
