@@ -13,30 +13,350 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" type="text/css" href="css/general.css">
+
     <style>
       /* Intro */
       .intro {
         background: linear-gradient(180.02deg, #324069 -1.38%, #2C5EF6 40.75%, #648AFF 86.78%);
+        margin-bottom: 200px;
       }
       .intro .section {
         color: #FFFFFF;
-        padding: 220px 0;
+        padding: 220px 0 150px;
+        margin: 0;
       }
-      /* Responsive */
-      .only_desktop {
-        display: none;
+      .intro .section h1 {
+        max-width: 540px;
+        margin: 24px 0;
       }
-      @media screen and (min-width: 768px) {
-        .only_desktop {
-          display: inherit;
+      .intro .section .intro__button {
+        display: block;
+        width: 180px;
+        height: 56px;
+        margin: 32px 0 16px;
+        padding: 20px;
+
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 16px;
+      }
+      .paragraph-small {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 16px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      h2 {
+        margin: 22px 0;
+      }
+      p {
+        margin: 16px 0;
+      }
+      .intro-browser {
+        position: absolute;
+        right: 0;
+        top: 205px;
+
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 16px 20px rgba(0, 0, 0, 0.06);
+        backdrop-filter: blur(8px);
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        padding: 0 0 10px 10px;
+      }
+      @media screen and (max-width: 1380px) {
+        .intro-browser {
+          overflow: hidden;
+          width: calc(100vw - 720px);
         }
       }
-      @media screen and (min-width: 768px) {
-        .only_mobile {
+      @media screen and (max-width: 1024px) {
+        .intro .section {
+          padding-bottom: 134px;
+        }
+        .intro-browser {
+          position: relative;
+          top: -64px;
+          right: -290px;
+          width: calc(100vw - 290px);
+        }
+      }
+      .intro-browser .menu {
+        height: 40px;
+      }
+      .intro-browser .bullet {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 15px 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+      }
+      .intro-browser .intro-browser-image img {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+      /** for-publishers  */
+      .for-publishers {
+        margin: 64px auto;
+        padding: 64px 96px;
+        background: #F5F5F7;
+        border-radius: 20px;
+      }
+      @media screen and (max-width: 950px) {
+        .for-publishers {
+          padding: 48px 16px;
+          border-radius: inherit;
+        }
+        .for-publishers__line {
           display: none;
         }
       }
+      .for-publishers .circle {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-color: #2A3860;
+        border-radius: 50%;
+
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 40px;
+        text-align: center;
+
+        color: #FFFFFF;
+      }
+      .for-publishers__header p {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+        color: #171717;
+      }
+      .for-publishers .grid-list .for-publishers__header {
+        margin: 0 auto 48px;
+      }
+      .for-publishers .grid-list:nth-child(0) .for-publishers__header {
+        width: 210px;
+      }
+      .for-publishers .grid-list:nth-child(1) .for-publishers__header {
+        width: 224px;
+      }
+      .for-publishers .grid-list:nth-child(2) .for-publishers__header {
+        width: 175px;
+      }
+      .for-publishers .for-publishers__white-block {
+        background: #FFFFFF;
+        border: 3px solid #2A3860;
+        box-sizing: border-box;
+        border-radius: 20px;
+        padding: 40px;
+      }
+      .for-publishers .for-publishers__white-block h5 {
+        display: flex;
+        justify-content: space-between;
+      }
+      .for-publishers .for-publishers__grey-block {
+        background: #E6E6EC;
+        border-radius: 20px;
+        padding: 40px;
+        padding-bottom: 52px;
+      }
+      .for-publishers .for-publishers__grey-block h5 {
+        margin-bottom: 32px;
+      }
+      .for-publishers .for-publishers__grey-block ul li {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 14px;
+        margin: 12px 0;
+        padding: 9px 10px;
+      }
+      .for-publishers .for-publishers__grey-block ul li:nth-child(2) {
+        color: #2e2e2f;
+        background-color: #FAFAFA;
+      }
+      .for-publishers .for-publishers__grey-block ul li:nth-child(3) {
+        color: #737376;
+        background-color: #F3F3F3;
+      }
+      .for-publishers .for-publishers__grey-block ul li:nth-child(4) {
+        color: #8a8a8a;
+        background-color: #F0F0F0;
+      }
+      .for-publishers .for-publishers__interest-list {
+        list-style: none;
+      }
+      .for-publishers .for-publishers__interest-item {
+        position: relative;
+        background: #FFFFFF;
+        border-radius: 6px;
+        text-align: left;
+      }
+      .for-publishers .for-publishers__interest-item-id {
+        margin-right: 14px;
+        color: rgba(0, 0, 0, 0.5);
+      }
+      .for-publishers .for-publishers__interest-list span:last-child {
+        position: absolute;
+        left: 50px;
+      }
+
+      /* browser-block */
+      .browser-block {
+        background: #E6E6EC;
+        border-radius: 10px;
+        padding: 10px;
+        margin-top: 32px;
+      }
+      .browser-block .menu {
+        display: flex;
+        justify-content: start;
+      }
+      .browser-block .bullet {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        margin: 0 2px;
+        border-radius: 50%;
+        background: #C2C2C5;
+      }
+      .browser-block .bullet:first-child {
+        margin-left: 0;
+      }
+      .browser-block .bullet:last-child {
+        margin-right: 0;
+      }
+      .browser-block .address-bar {
+        background: #FFFFFF;
+        border-radius: 6px;
+        text-align: center;
+        padding: 4px;
+        margin: 8px 0;
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 12px;
+      }
+      .browser-block .browser-content {
+        position: relative;
+        background: #FFFFFF;
+        border-radius: 6px;
+        padding: 12px;
+      }
+      .browser-block .browser-content .browser-content__row {
+        max-width: 92px;
+        height: 8px;
+        background: #E6E6EC;
+        border-radius: 30px;
+        margin: 6px 0;
+      }
+      .browser-block .browser-content .browser-content__row--full {
+        max-width: 100%;
+        height: 33px;
+        background: #E6E6EC;
+        border-radius: 6px;
+        margin: 10px 0;
+      }
+      .browser-block .browser-content .browser-content__data {
+        position: absolute;
+        bottom: 0;
+        left: 23%;
+        width: 54%;
+        height: 64px;
+        background: linear-gradient(180deg, #B05AF4 0%, #A748F1 100%);
+        border: 3px solid #B05AF4;
+        border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        box-sizing: border-box;
+
+        padding: 29px 12px 12px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+        color: #FFFFFF;
+      }
+      .browser-block .browser-content.browser-content--campaigns .bullet {
+        margin: 6px;
+      }
+      .browser-block .browser-content.browser-content--campaigns .triangle {
+        margin: 0;
+        height: 8px;
+        line-height: 0;
+      }
+      .browser-block .browser-content.browser-content--campaigns {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+      }
+      .browser-block .browser-content.browser-content--campaigns .browser-content__sidebar {
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid #E6E6EC;
+      }
+      .browser-block .browser-content.browser-content--campaigns .browser-content__list {
+        padding: 12px;
+        padding-bottom: 0;
+        width: 100%;
+        text-align: left;
+      }
+      .browser-block .browser-content.browser-content--campaigns .browser-content__list_header {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 14px;
+        margin-bottom: 12px;
+      }
+      .browser-block .browser-content.browser-content--campaigns .browser-content__list_item {
+        width: 100%;
+        background: #E6E6EC;
+        border-radius: 4px;
+        margin: 3px 0;
+        padding: 5px 10px;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 14px;
+        color: #8E8EA5;
+      }
+
+      /* for-publishers__line */
+      .for-publishers__line {
+        position: relative;
+        margin: 32px auto;
+        text-align: center;
+      }
+      .for-publishers__currency {
+        position: absolute;
+        top: 24px;
+        left: calc(50% - 28px);
+        background: #2A3860;
+        border: 2px solid #2A3860;
+        border-radius: 50px;
+        width: 56px;
+        height: 28px;
+
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+      }
+      .for-publishers__currency_label {
+        position: absolute;
+        top: 70px;
+        width: 102px;
+        left: calc(50% - 51px);
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 18px;
+        color: #505050;
+      }
     </style>
+
     <!-- Favicon -->
     <link
       rel="apple-touch-icon"
@@ -68,7 +388,7 @@
 
   <body>
     <div class="intro">
-      <header class="container container--large header">
+      <header class="container container--medium header">
         <div class="header__logo">
           <img src="./images/title-logo-white.svg" aria-label="Logo" />
         </div>
@@ -161,21 +481,261 @@
 
       <section class="section">
         <div class="container">
-          <div class="intro__inner">
-            <h1 class="intro__title">
-              We help publishers monetise audience.
-            </h1>
-          </div>
+          <h1>
+            We help publishers monetise audience.
+          </h1>
+          <p>
+            The EdgeKit platform creates incremental<br /> revenue through private-by-design and<br /> cookie-less audience segmentation.
+          </p>
+          <a href="#" class="button button--black intro__button">
+            Try EdgeKit
+          </a>
+          <p class="paragraph-small">No credit card required</p>
         </div>
       </section>
+
+      <div class="intro-browser">
+        <div class="menu">
+          <span class="bullet"></span>
+          <span class="bullet"></span>
+          <span class="bullet"></span>
+        </div>
+        <div class="intro-browser-image">
+          <img srcset="images/plat-intro.png 480w,images/plat-intro-tablet.png 1024w"
+               sizes="(max-width: 600px) 480px, 1024px"
+               src="images/plat-intro.png"
+               alt="Elva dressed as a fairy">
+        </div>
+      </div>
+
     </div>
 
     <section class="section">
-      <div class="container">
-        <div class="intro__inner">
-          <h1 class="intro__title">
-            EdgeKit
-          </h1>
+      <div class="container section-heading">
+        <h2>
+          Made for publishers.
+        </h2>
+        <p>
+          Monetise your 1st party data without reliance on third party aggregators or adtech middlemen.
+        </p>
+        <p>
+          Your user’s data is not shared with any 3rd parties, all information is stored and processed on the individual’s device.
+        </p>
+      </div>
+
+      <div class="container--medium for-publishers">
+        <div class="grid-list">
+          <div class="grid-item">
+            <div class="for-publishers__header">
+              <span class="circle">1</span>
+              <p>Regain control whilst maintaining user privacy</p>
+            </div>
+
+            <div class="for-publishers__white-block">
+              <h5>
+                Publisher
+                <svg width="26" height="29" viewBox="0 0 26 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22.1562 11.5C22.8418 11.5 23.4219 11.7637 23.9492 12.2383C24.4238 12.7656 24.6875 13.3457 24.6875 14.0312V25.8438C24.6875 26.582 24.4238 27.1621 23.9492 27.6367C23.4219 28.1641 22.8418 28.375 22.1562 28.375H3.59375C2.85547 28.375 2.27539 28.1641 1.80078 27.6367C1.27344 27.1621 1.0625 26.582 1.0625 25.8438V14.0312C1.0625 13.3457 1.27344 12.7656 1.80078 12.2383C2.27539 11.7637 2.85547 11.5 3.59375 11.5H5.28125V8.96875C5.28125 7.59766 5.59766 6.33203 6.2832 5.17188C6.96875 4.01172 7.91797 3.11523 9.07812 2.42969C10.2383 1.74414 11.5039 1.375 12.875 1.375C14.2461 1.375 15.5117 1.74414 16.6719 2.42969C17.832 3.11523 18.7285 4.06445 19.4141 5.22461C20.0996 6.38477 20.4688 7.65039 20.4688 9.02148V11.5H22.1562ZM7.8125 8.96875V11.5H17.9375V8.96875C17.9375 7.59766 17.4102 6.38477 16.4609 5.38281C15.459 4.43359 14.2461 3.90625 12.875 3.90625C11.4512 3.90625 10.2383 4.43359 9.28906 5.38281C8.28711 6.38477 7.8125 7.59766 7.8125 8.96875ZM22.1562 25.8438V14.0312H3.59375V25.8438H22.1562Z"
+                        fill="#B05AF4" />
+                  <path d="M23.9492 12.2383L24.2465 11.9707L24.2325 11.955L24.2168 11.941L23.9492 12.2383ZM1.80078 27.6367L2.0981 27.3691L2.08402 27.3535L2.06837 27.3394L1.80078 27.6367ZM5.28125 11.5V11.9H5.68125V11.5H5.28125ZM20.4688 11.5H20.0688V11.9H20.4688V11.5ZM7.8125 11.5H7.4125V11.9H7.8125V11.5ZM17.9375 11.5V11.9H18.3375V11.5H17.9375ZM16.4609 5.38281L16.7513 5.10771L16.7439 5.09987L16.736 5.09243L16.4609 5.38281ZM22.1562 25.8438V26.2437H22.5562V25.8438H22.1562ZM22.1562 14.0312H22.5562V13.6313H22.1562V14.0312ZM3.59375 14.0312V13.6313H3.19375V14.0312H3.59375ZM3.59375 25.8438H3.19375V26.2437H3.59375V25.8438ZM22.1562 11.9C22.7249 11.9 23.2131 12.1139 23.6816 12.5356L24.2168 11.941C23.6307 11.4134 22.9587 11.1 22.1562 11.1V11.9ZM23.6519 12.5059C24.0736 12.9744 24.2875 13.4626 24.2875 14.0312H25.0875C25.0875 13.2288 24.7741 12.5568 24.2465 11.9707L23.6519 12.5059ZM24.2875 14.0312V25.8438H25.0875V14.0312H24.2875ZM24.2875 25.8438C24.2875 26.472 24.0688 26.9515 23.6664 27.3539L24.2321 27.9196C24.7789 27.3727 25.0875 26.692 25.0875 25.8438H24.2875ZM23.6664 27.3539C23.219 27.8013 22.7429 27.975 22.1562 27.975V28.775C22.9407 28.775 23.6248 28.5268 24.2321 27.9196L23.6664 27.3539ZM22.1562 27.975H3.59375V28.775H22.1562V27.975ZM3.59375 27.975C2.94543 27.975 2.48247 27.7962 2.0981 27.3691L1.50346 27.9043C2.06831 28.5319 2.76551 28.775 3.59375 28.775V27.975ZM2.06837 27.3394C1.64128 26.955 1.4625 26.4921 1.4625 25.8438H0.6625C0.6625 26.672 0.905591 27.3692 1.5332 27.934L2.06837 27.3394ZM1.4625 25.8438V14.0312H0.6625V25.8438H1.4625ZM1.4625 14.0312C1.4625 13.4446 1.6362 12.9685 2.08362 12.5211L1.51794 11.9554C0.910677 12.5627 0.6625 13.2468 0.6625 14.0312H1.4625ZM2.08362 12.5211C2.48602 12.1187 2.96546 11.9 3.59375 11.9V11.1C2.74548 11.1 2.06476 11.4086 1.51794 11.9554L2.08362 12.5211ZM3.59375 11.9H5.28125V11.1H3.59375V11.9ZM5.68125 11.5V8.96875H4.88125V11.5H5.68125ZM5.68125 8.96875C5.68125 7.66241 5.98177 6.46826 6.62757 5.37537L5.93883 4.96838C5.21354 6.1958 4.88125 7.53291 4.88125 8.96875H5.68125ZM6.62757 5.37537C7.2749 4.27988 8.17259 3.42939 9.28162 2.77406L8.87463 2.08532C7.66335 2.80108 6.6626 3.74355 5.93883 4.96838L6.62757 5.37537ZM9.28162 2.77406C10.3837 2.12284 11.5795 1.775 12.875 1.775V0.975C11.4283 0.975 10.0929 1.36544 8.87463 2.08532L9.28162 2.77406ZM12.875 1.775C14.1705 1.775 15.3663 2.12284 16.4684 2.77406L16.8754 2.08532C15.6571 1.36544 14.3217 0.975 12.875 0.975V1.775ZM16.4684 2.77406C17.5639 3.42139 18.4144 4.31907 19.0697 5.4281L19.7584 5.02112C19.0427 3.80983 18.1002 2.80908 16.8754 2.08532L16.4684 2.77406ZM19.0697 5.4281C19.7209 6.53015 20.0688 7.72597 20.0688 9.02148H20.8687C20.8687 7.57481 20.4783 6.23938 19.7584 5.02112L19.0697 5.4281ZM20.0688 9.02148V11.5H20.8687V9.02148H20.0688ZM20.4688 11.9H22.1562V11.1H20.4688V11.9ZM7.4125 8.96875V11.5H8.2125V8.96875H7.4125ZM7.8125 11.9H17.9375V11.1H7.8125V11.9ZM18.3375 11.5V8.96875H17.5375V11.5H18.3375ZM18.3375 8.96875C18.3375 7.4861 17.7643 6.177 16.7513 5.10771L16.1706 5.65791C17.056 6.59253 17.5375 7.70921 17.5375 8.96875H18.3375ZM16.736 5.09243C15.6668 4.07943 14.3577 3.50625 12.875 3.50625V4.30625C14.1345 4.30625 15.2512 4.78776 16.1858 5.67319L16.736 5.09243ZM12.875 3.50625C11.3434 3.50625 10.0293 4.07691 9.00622 5.09997L9.57191 5.66566C10.4473 4.79027 11.5589 4.30625 12.875 4.30625V3.50625ZM9.00622 5.09997C7.92661 6.17958 7.4125 7.49536 7.4125 8.96875H8.2125C8.2125 7.69995 8.64761 6.58995 9.57191 5.66566L9.00622 5.09997ZM22.5562 25.8438V14.0312H21.7563V25.8438H22.5562ZM22.1562 13.6313H3.59375V14.4312H22.1562V13.6313ZM3.19375 14.0312V25.8438H3.99375V14.0312H3.19375ZM3.59375 26.2437H22.1562V25.4438H3.59375V26.2437Z"
+                        fill="#B05AF4" />
+                </svg>
+              </h5>
+              <div class="browser-block">
+                <div class="menu">
+                  <span class="bullet"></span>
+                  <span class="bullet"></span>
+                  <span class="bullet"></span>
+                </div>
+                <div class="address-bar">
+                  publisher.com
+                </div>
+                <div class="browser-content">
+                  <div class="browser-content__row"></div>
+                  <div class="browser-content__row--full"></div>
+                  <div class="browser-content__row"></div>
+                  <div class="browser-content__row"></div>
+                  <div class="browser-content__data">User data</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="for-publishers__header">
+              <span class="circle">2</span>
+              <p>Attach 1st party audiences to bid requests </p>
+            </div>
+
+            <div class="for-publishers__grey-block">
+              <h5>Bid request</h5>
+              <ul class="for-publishers__interest-list">
+                <li class="for-publishers__interest-item">
+                  <span class="for-publishers__interest-item-id">352</span><span>Travel</span>
+                </li>
+                <li class="for-publishers__interest-item">
+                  <span class="for-publishers__interest-item-id">189</span><span>Sports</span>
+                </li>
+                <li class="for-publishers__interest-item">
+                  <span class="for-publishers__interest-item-id">67</span><span>Lifestyle</span>
+                </li>
+                <li class="for-publishers__interest-item">
+                  <span class="for-publishers__interest-item-id">144</span>
+                  <span>Fashion</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="for-publishers__header">
+              <span class="circle">3</span>
+              <p>Generate incremental revenue</p>
+            </div>
+
+            <div class="for-publishers__white-block">
+              <h5>Marketer</h5>
+              <div class="browser-block">
+                <div class="menu">
+                  <span class="bullet"></span>
+                  <span class="bullet"></span>
+                  <span class="bullet"></span>
+                </div>
+                <div class="address-bar">
+                  marketer.com
+                </div>
+                <div class="browser-content browser-content--campaigns">
+                  <div class="browser-content__sidebar">
+                    <span class="bullet"></span>
+                    <span class="triangle">
+                      <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.13397 0.5C4.51887 -0.166667 5.48113 -0.166666 5.86603 0.5L9.33013 6.5C9.71503 7.16667 9.2339 8 8.4641 8H1.5359C0.766098 8 0.284973 7.16667 0.669873 6.5L4.13397 0.5Z"
+                              fill="#C2C2C4" />
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="browser-content__list">
+                    <div class="browser-content__list_header">Campaigns</div>
+                    <div class="browser-content__list_item">Travel</div>
+                    <div class="browser-content__list_item">Sports</div>
+                    <div class="browser-content__list_item">Lifestyle</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="for-publishers__line">
+          <svg width="697" height="39" viewBox="0 0 697 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.70711 0.293015C8.31658 -0.097509 7.68342 -0.097509 7.29289 0.293015L0.928932 6.65698C0.538408 7.0475 0.538408 7.68067 0.928932 8.07119C1.31946 8.46171 1.95262 8.46171 2.34315 8.07119L8 2.41434L13.6569 8.07119C14.0474 8.46171 14.6805 8.46171 15.0711 8.07119C15.4616 7.68067 15.4616 7.0475 15.0711 6.65698L8.70711 0.293015ZM7 1.00012V28.0001H9V1.00012H7ZM18 39.0001H686V37.0001H18V39.0001ZM697 28.0001V1.00012H695V28.0001H697ZM686 39.0001C692.075 39.0001 697 34.0753 697 28.0001H695C695 32.9707 690.971 37.0001 686 37.0001V39.0001ZM7 28.0001C7 34.0753 11.9249 39.0001 18 39.0001V37.0001C13.0294 37.0001 9 32.9707 9 28.0001H7Z"
+                  fill="#2A3860"
+                  fill-opacity="0.3" />
+          </svg>
+          <span class="for-publishers__currency">£</span>
+          <span class="for-publishers__currency_label">Final bid price</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container section-heading">
+        <h2>
+          Move faster with a hosted EdgeKit service.
+        </h2>
+        <p>
+          Built for publishers who’d rather spend time creating content than managing ad-tech infrastructure.
+        </p>
+      </div>
+
+      <div class="container move-faster">
+        <div class="grid-list">
+          <div class="grid-item">
+            <span class="circle">icon</span>
+            <p>Simple copy & paste
+              intergration</p>
+          </div>
+          <div class="grid-item">
+            <span class="circle">icon</span>
+            <p>Low latency, serving from a global CDN</p>
+          </div>
+          <div class="grid-item">
+            <span>icon</span>
+            <p>Automated updates</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container section-heading">
+        <h3>
+          Features
+        </h3>
+        <h2>
+          Analytics.
+        </h2>
+        <p>
+          Gain deep insights into how your 1st party data is segmented and monetised.
+        </p>
+      </div>
+
+      <div class="container--medium">
+        <img src="">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container section-heading">
+        <h2>
+          NLP feature extraction.
+        </h2>
+        <p>
+          Automated crawling and processing of your site content to create language features to power EdgeKit audience models.
+        </p>
+      </div>
+
+      <div class="container--medium">
+        <img src="">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container section-heading">
+        <h2>
+          Deal revenue.
+        </h2>
+        <p>
+          Integration with your private deals to drive the true value for your inventory & audiences.
+        </p>
+      </div>
+
+      <div class="container--medium">
+        <img src="">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container--medium no-risk section-heading">
+        <h2>
+          No-risk pricing.
+        </h2>
+        <p>
+          The EdgeKit platform creates incremental demand for your media & audience.
+        </p>
+        <p class="paragraph-small">
+          We take a transparent bid reduction, with the final bid arriving in your SSP & ad server a net price which can fairly compete with all other demand sources.
+        </p>
+
+        <div class="grid-list--four-columns">
+          <div class="grid-item-large">
+            Your monthly page views
+          </div>
+          <div class="grid-item">
+            Our bid reduction
+          </div>
+          <div class="grid-item">
+            Your incremental revenue
+          </div>
         </div>
       </div>
     </section>
