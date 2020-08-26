@@ -691,9 +691,6 @@ p {
         width: 336px;
         margin: 0 auto;
     }
-    .grid-list .grid-item:not(:first-child) {
-        margin: 48px auto;
-    }
 }
 
 @media screen and (max-width: 374px) {

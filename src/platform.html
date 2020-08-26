@@ -65,15 +65,15 @@
         border-bottom-left-radius: 10px;
         padding: 0 0 10px 10px;
       }
-      @media screen and (max-width: 1380px) {
+      @media screen and (max-width: 1570px) {
         .intro-browser {
           overflow: hidden;
-          width: calc(100vw - 720px);
+          width: calc(100vw - 840px);
         }
       }
       @media screen and (max-width: 1024px) {
         .intro .section {
-          padding-bottom: 134px;
+          padding: 80px 0 135px;
         }
         .intro-browser {
           position: relative;
@@ -82,6 +82,46 @@
           width: calc(100vw - 290px);
         }
       }
+      @media screen and (max-width: 768px) {
+        .intro {
+          margin-bottom: 180px;
+        }
+        .intro .section {
+          padding: 50px 0 102px;
+        }
+        .intro-browser {
+          right: -50px;
+          width: calc(100vw - 50px);
+        }
+      }
+      @media screen and (max-width: 480px) {
+        .intro {
+          margin-bottom: 96px;
+        }
+        .intro .section {
+          padding: 50px 0 48px;
+        }
+        .intro-browser {
+          top: 0;
+          right: -115px;
+          width: calc(100vw - 115px);
+          height: 250px;
+          border-bottom-left-radius: 0;
+        }
+      }
+      @media screen and (max-width: 380px) {
+        .intro .section {
+          padding: 50px 0 48px;
+        }
+        .intro-browser {
+          top: 0;
+          left: 16px;
+          width: calc(100% - 16px);
+          height: 250px;
+          border-bottom-left-radius: 0;
+        }
+      }
+
       .intro-browser .menu {
         height: 40px;
       }
@@ -108,9 +148,6 @@
         .for-publishers {
           padding: 48px 16px;
           border-radius: inherit;
-        }
-        .for-publishers__line {
-          display: none;
         }
       }
       .for-publishers .circle {
@@ -204,7 +241,15 @@
         position: absolute;
         left: 50px;
       }
-
+      .for-publishers__arrow {
+        margin: 28px auto;
+        display: none;
+      }
+      @media screen and (max-width: 950px){
+        .for-publishers__arrow {
+          display: inherit;
+        }
+      }
       /* browser-block */
       .browser-block {
         background: #E6E6EC;
@@ -355,6 +400,35 @@
         line-height: 18px;
         color: #505050;
       }
+      @media screen and (max-width: 950px) {
+        .for-publishers__line svg{
+          display: none;
+        }
+        .for-publishers__line {
+          position: inherit;
+          margin: 0 auto;
+        }
+        .for-publishers__currency {
+          position: inherit;
+          margin: 0 auto;
+          display: block;
+        }
+        .for-publishers__currency_label {
+          position: inherit;
+          margin: 20px auto 0;
+          display: block;
+        }
+        .for-publishers__interest-item {
+          width: 110px;
+          display: inline-block;
+        }
+        .for-publishers .for-publishers__grey-block ul li:nth-child(2n) {
+          margin-left: 10px;
+        }
+        .for-publishers .for-publishers__grey-block ul li:nth-child(2n+1) {
+          margin-right: 10px;
+        }
+      }
     </style>
 
     <!-- Favicon -->
@@ -501,8 +575,8 @@
           <span class="bullet"></span>
         </div>
         <div class="intro-browser-image">
-          <img srcset="images/plat-intro.png 480w,images/plat-intro-tablet.png 1024w"
-               sizes="(max-width: 600px) 480px, 1024px"
+          <img srcset="images/plat-intro-tablet.png 480w, images/plat-intro-tablet.png 1024w"
+               sizes="(max-width: 480px) 500px, 1024px"
                src="images/plat-intro.png"
                alt="Elva dressed as a fairy">
         </div>
@@ -559,7 +633,9 @@
                 </div>
               </div>
             </div>
+            <div class="for-publishers__arrow only_mobile"><img src="images/arrow-down.svg"></div>
           </div>
+
           <div class="grid-item">
             <div class="for-publishers__header">
               <span class="circle">2</span>
@@ -584,7 +660,9 @@
                 </li>
               </ul>
             </div>
+            <div class="for-publishers__arrow only_mobile"><img src="images/arrow-down.svg"></div>
           </div>
+
           <div class="grid-item">
             <div class="for-publishers__header">
               <span class="circle">3</span>
@@ -621,6 +699,7 @@
                 </div>
               </div>
             </div>
+            <div class="for-publishers__arrow"><img src="images/arrow-down.svg"></div>
           </div>
         </div>
 
