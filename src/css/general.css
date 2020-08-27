@@ -321,6 +321,7 @@ a {
     margin-bottom: 216px;
 }
 .section-heading p {
+    max-width: 670px;
     color: #333333;
 }
 @media screen and (max-width: 768px) {
