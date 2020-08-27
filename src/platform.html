@@ -519,14 +519,6 @@
       .no-risk-footer span {
         opacity: 0.8;
       }
-      .no-risk-footer a {
-        opacity: 1;
-        color: #FFFFFF;
-        transition: color .2s;
-      }
-      .no-risk-footer a:hover {
-        color: #000000;
-      }
       .no-risk--description {
         margin-bottom: 84px;
         max-width: 512px;
@@ -721,7 +713,6 @@
       #pricing-slider:hover::-moz-range-track {
         opacity: 0.4;
       }
-
       #pricing-slider::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
@@ -732,7 +723,6 @@
         opacity: 1 !important;
         cursor: pointer;
       }
-
       #pricing-slider::-moz-range-thumb {
         width: 28px;
         height: 28px;
@@ -746,7 +736,6 @@
           max-width: 300px;
         }
       }
-
       .features h3 {
         margin: 0;
       }
@@ -761,6 +750,14 @@
           margin-top: 0;
           margin-bottom: 16px;
         }
+      }
+      #contact-us-for-copy {
+        opacity: 1;
+        color: #FFFFFF;
+        transition: color .2s;
+      }
+      #contact-us-for-copy:hover {
+        color: #000000;
       }
 
     </style>
@@ -1197,7 +1194,7 @@
                 Our bid reduction
               </p>
               <p class="no-risk--grid-price">
-                £<span id="pricing-slider-bid">7500</span>
+                <span class="pricing-slider-currency">£</span><span id="pricing-slider-bid">7500</span>
               </p>
               <p class="no-risk--grid-description">
                 We take a transparent bid reduction, the bid priced you receive is net of all costs.
@@ -1208,7 +1205,7 @@
                 Your incremental revenue
               </p>
               <p class="no-risk--grid-price">
-                £<span id="pricing-slider-revenue">7500</span>
+                <span class="pricing-slider-currency">£</span><span id="pricing-slider-revenue">7500</span>
               </p>
               <p class="no-risk--grid-description">
                 Estimated based on shifting open market demand into audience enhanced private deals.
@@ -1226,7 +1223,7 @@
         </div>
         <div class="no-risk-footer">
           <span>We are also able to provide a flat monthly fee based on your site traffic.</span>
-          <a href="#">Contact us
+          <a id="contact-us-for-copy" href="#">Contact us
             <i>
               <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15.7812 6.35156C15.7812 6.10938 15.6797 5.875 15.5 5.70312L10.3672 0.570312C10.1641 0.375 9.95312 0.289062 9.73438 0.289062C9.23438 0.289062 8.875 0.640625 8.875 1.11719C8.875 1.36719 8.97656 1.57812 9.13281 1.73438L10.8906 3.51562L13.1562 5.58594L11.3438 5.47656H1.875C1.35156 5.47656 0.992188 5.83594 0.992188 6.35156C0.992188 6.85938 1.35156 7.21875 1.875 7.21875H11.3438L13.1562 7.10938L10.8906 9.17969L9.13281 10.9609C8.97656 11.1172 8.875 11.3281 8.875 11.5781C8.875 12.0547 9.23438 12.4062 9.73438 12.4062C9.95312 12.4062 10.1641 12.3203 10.3516 12.1406L15.5 6.99219C15.6797 6.82031 15.7812 6.58594 15.7812 6.35156Z"
@@ -1347,6 +1344,7 @@
           valueEl: document.getElementById('pricing-slider-value'),
           bidEl: document.getElementById('pricing-slider-bid'),
           revenueEl: document.getElementById('pricing-slider-revenue'),
+          currencyEls: document.getElementsByClassName('pricing-slider-currency'),
         };
 
         pricingInput.El.setAttribute("min", 100000);
@@ -1357,8 +1355,19 @@
           pricingOutput.valueEl.innerHTML = pricingInput.El.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           const revenue = Math.round(parseInt(pricingInput.El.value) / 1000 * 1.5);
           const bid = Math.round(revenue * 0.1);
+          if( parseInt(pricingInput.El.value) >= 100000000) {
+            pricingOutput.revenueEl.innerHTML = document.getElementById('contact-us-for-copy').outerHTML;
+            pricingOutput.bidEl.innerHTML = 'Custom';
+            Array.from(pricingOutput.currencyEls).forEach((el) => {
+              el.hidden = true;
+            });
+            return;
+          }
           pricingOutput.revenueEl.innerHTML = revenue.toString();
           pricingOutput.bidEl.innerHTML = bid;
+          Array.from(pricingOutput.currencyEls).forEach((el) => {
+            el.hidden = false;
+          });
         });
       });
 
