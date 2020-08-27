@@ -487,12 +487,6 @@ a {
         color: rgba(255, 255, 255, 0.8);
     }
 }
-.nav__link--active {
-    color: #ffffff;
-    border-bottom: 2px solid;
-    padding: 6px 0;
-    border-color: rgba(255, 255, 255, 0.5);
-}
 @media screen and (max-width: 860px) {
     .nav__link {
         margin: 0 12px;
@@ -591,6 +585,12 @@ body.burger-menu-open .nav__burger {
         margin: 12px;
     }
 }
+.nav__link--active {
+    color: #ffffff;
+    border-bottom: 2px solid;
+    padding: 6px 0;
+    border-color: rgba(255, 255, 255, 0.5);
+}
 .menu-mobile .nav-mobile .nav__link--active {
     box-shadow: none;
     border-color: rgba(255, 255, 255, 0.5);
@@ -654,9 +654,11 @@ body.burger-menu-open .menu-mobile .nav-mobile, body.burger-menu-open .menu-mobi
     .footer .nav-mobile-buttons {
         position: initial;
     }
-
     .footer-tablet {
         display: none;
+    }
+    .nav__link--active {
+        padding: 0;
     }
 }
 
