@@ -245,7 +245,7 @@
         margin: 28px auto;
         display: none;
       }
-      @media screen and (max-width: 950px){
+      @media screen and (max-width: 950px) {
         .for-publishers__arrow {
           display: inherit;
         }
@@ -401,7 +401,7 @@
         color: #505050;
       }
       @media screen and (max-width: 950px) {
-        .for-publishers__line svg{
+        .for-publishers__line svg {
           display: none;
         }
         .for-publishers__line {
@@ -427,6 +427,266 @@
         }
         .for-publishers .for-publishers__grey-block ul li:nth-child(2n+1) {
           margin-right: 10px;
+        }
+      }
+      .container--medium-image {
+        background: #F5F5F7;
+        border-radius: 20px;
+        margin: 64px auto;
+        padding: 0;
+        overflow: hidden;
+      }
+      .container--medium-image > img {
+        background: linear-gradient(360deg, #F5F5F7 0%, rgba(245, 245, 247, 0) 22.18%);
+        width: 1216px;
+      }
+      @media screen and (max-width: 1216px) {
+        .container--medium-image {
+          width: calc(100% - 32px);
+          margin-left: 32px;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      }
+
+      @media screen and (max-width: 620px) {
+        .container--medium-image > img {
+          width: 608px;
+        }
+      }
+
+      @media screen and (max-width: 550px) {
+        .container--medium-image {
+          margin-left: 16px;
+        }
+      }
+      /* No Risk */
+      .no-risk {
+        position: relative;
+        background-image: linear-gradient(180.46deg, #2C5EF6 14.83%, #648AFF 72.73%);
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        padding: 156px 216px 76px;
+        color: #FFFFFF;
+      }
+      .no-risk-footer {
+        background: #5176E5;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        margin-bottom: 92px;
+
+        padding: 14px;
+        text-align: center;
+        color: #FFFFFF;
+
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 28px;
+      }
+      .no-risk-footer span {
+        opacity: 0.8;
+      }
+      .no-risk-footer a {
+        opacity: 1;
+        color: #FFFFFF;
+        transition: color .2s;
+      }
+      .no-risk-footer a:hover {
+        color: #000000;
+      }
+      .no-risk--description {
+        margin-bottom: 84px;
+        max-width: 512px;
+      }
+      .no-risk--description .paragraph-small {
+        font-size: 18px;
+        line-height: 28px;
+      }
+      .no-risk h2 {
+        font-weight: bold;
+        font-size: 56px;
+        line-height: 64px;
+        color: #FFFFFF;
+      }
+      .no-risk--grid-list {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-gap: 0;
+      }
+      .no-risk--grid-item:not(:last-child) {
+        border-right: 1px solid rgba(255, 255, 255, 0.15);
+        padding-right: 35px;
+      }
+      .no-risk--grid-item:not(:first-child) {
+        padding-left: 35px;
+      }
+      .no-risk--grid-item input {
+        width: 100%;
+      }
+      .no-risk__try_desktop{
+        position: absolute;
+        top: 156px;
+        right: 216px;
+        text-align: right;
+      }
+      .no-risk__try_mobile {
+        display: none;
+      }
+      .no-risk__try_desktop .button, .no-risk__try_mobile .button{
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 56px;
+        padding: 18px 40px;
+        margin: 0;
+      }
+      .no-risk__try_desktop p, .no-risk__try_mobile p {
+        font-size: 16px;
+        line-height: 16px;
+        color: rgba(255, 255, 255, 0.8);
+        margin-top: 16px;
+      }
+      @media screen and (max-width: 1216px) {
+        .no-risk {
+          padding: 128px 64px 92px;
+        }
+        .no-risk__try_desktop {
+          display: none;
+        }
+        .no-risk__try_mobile {
+          display: block;
+        }
+        .no-risk--grid-list {
+          display: inline-block;
+        }
+        .no-risk--grid-item {
+          border-right: none;
+          margin-bottom: 64px;
+        }
+        .no-risk--grid-item:first-child {
+          border-right: none;
+          width: 100%;
+        }
+        .no-risk--grid-item:not(:first-child) {
+          padding-left: 0;
+          float: left;
+          width: calc(50%);
+        }
+        .no-risk--grid-item:not(:last-child) {
+          padding-right: 0;
+        }
+        .no-risk--grid-item:nth-child(2) {
+          padding-right: 20px;
+          border-right: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .no-risk--grid-item:nth-child(3) {
+          padding-left: 20px;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        .no-risk {
+          padding: 56px 32px 40px;
+        }
+        .no-risk__try_mobile {
+          text-align: center;
+        }
+        .no-risk--description {
+          padding-bottom: 40px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .no-risk--grid-item {
+          padding-bottom: 40px;
+          margin-bottom: 40px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .no-risk--grid-item:not(:first-child) {
+          border-right: none;
+          width: 100%;
+          margin-left: 0;
+        }
+        .no-risk--grid-item:nth-child(2) {
+          padding-right: 0;
+        }
+        .no-risk--grid-item:nth-child(3) {
+          padding-left: 0;
+        }
+        .no-risk-footer {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+      .no-risk--grid-title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 16px;
+      }
+      .no-risk--grid-price {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 24px;
+      }
+      .no-risk--grid-price-min, .no-risk--grid-price-max {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .no-risk--grid-price-max {
+        float: right;
+      }
+      .no-risk--grid-description {
+        max-width: 220px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      #pricing-slider {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        margin: 10px 0;
+        height: 8px;
+        border-radius: 40px;
+        background: rgba(0, 0, 0, 0.1);;
+        outline: none;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+      }
+      #pricing-slider::-moz-range-track {
+        opacity: 0.1;
+      }
+      #pricing-slider:hover::-moz-range-track {
+        opacity: 0.4;
+      }
+
+      #pricing-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #FFFFFF;
+        opacity: 1 !important;
+        cursor: pointer;
+      }
+
+      #pricing-slider::-moz-range-thumb {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #FFFFFF;
+        opacity: 1;
+        cursor: pointer;
+      }
+      @media screen and (max-width: 768px) {
+        .no-risk--grid-description {
+          max-width: 300px;
         }
       }
     </style>
@@ -727,19 +987,46 @@
       </div>
 
       <div class="container move-faster">
-        <div class="grid-list">
-          <div class="grid-item">
-            <span class="circle">icon</span>
-            <p>Simple copy & paste
-              intergration</p>
+        <div class="hood">
+          <div class="hood__item">
+            <img
+              class="hood__pic"
+              src="./images/hood-copy-paste.svg"
+              alt="Free and open source"
+            />
+            <div class="hood__content">
+              <div class="hood__title">
+                Simple copy & paste<br />
+                intergration
+              </div>
+            </div>
           </div>
-          <div class="grid-item">
-            <span class="circle">icon</span>
-            <p>Low latency, serving from a global CDN</p>
+
+          <div class="hood__item">
+            <img
+              class="hood__pic"
+              src="./images/hood-low-latency.svg"
+              alt="Free and open source"
+            />
+            <div class="hood__content">
+              <div class="hood__title">
+                Low latency, serving<br />
+                from a global CDN
+              </div>
+            </div>
           </div>
-          <div class="grid-item">
-            <span>icon</span>
-            <p>Automated updates</p>
+
+          <div class="hood__item">
+            <img
+              class="hood__pic"
+              src="./images/hood-automated.svg"
+              alt="Free and open source"
+            />
+            <div class="hood__content">
+              <div class="hood__title">
+                Automated updates
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -758,8 +1045,8 @@
         </p>
       </div>
 
-      <div class="container--medium">
-        <img src="">
+      <div class="container--medium container--medium-image">
+        <img src="images/audience-chart.png">
       </div>
     </section>
 
@@ -773,8 +1060,8 @@
         </p>
       </div>
 
-      <div class="container--medium">
-        <img src="">
+      <div class="container--medium container--medium-image">
+        <img src="images/features-list.png">
       </div>
     </section>
 
@@ -788,33 +1075,91 @@
         </p>
       </div>
 
-      <div class="container--medium">
-        <img src="">
+      <div class="container--medium container--medium-image">
+        <img src="images/audience-list.png">
       </div>
     </section>
 
     <section class="section">
-      <div class="container--medium no-risk section-heading">
-        <h2>
-          No-risk pricing.
-        </h2>
-        <p>
-          The EdgeKit platform creates incremental demand for your media & audience.
-        </p>
-        <p class="paragraph-small">
-          We take a transparent bid reduction, with the final bid arriving in your SSP & ad server a net price which can fairly compete with all other demand sources.
-        </p>
+      <div class="container--large">
+        <div class="no-risk">
+          <div class="no-risk--description">
+            <h2>
+              No-risk pricing.
+            </h2>
+            <p>
+              The EdgeKit platform creates incremental demand for your media & audience.
+            </p>
+            <p class="paragraph-small">
+              We take a transparent bid reduction, with the final bid arriving in your SSP & ad server a net price which can fairly compete with all other demand sources.
+            </p>
+          </div>
 
-        <div class="grid-list--four-columns">
-          <div class="grid-item-large">
-            Your monthly page views
+          <div class="no-risk__try_desktop">
+            <a href="#" class="button button--black">
+              Try EdgeKit
+            </a>
+            <p>No credit card required</p>
           </div>
-          <div class="grid-item">
-            Our bid reduction
+
+          <div class="no-risk--grid-list">
+            <div class="no-risk--grid-item">
+              <p class="no-risk--grid-title">
+                Your monthly page views
+              </p>
+              <p class="no-risk--grid-price" id="pricing-slider-value">
+                50,000,000
+              </p>
+              <input type="range" min="100000" max="100000000" value="50000000" step="1000" id="pricing-slider" />
+              <span class="no-risk--grid-price-min">
+              100,000
+            </span>
+              <span class="no-risk--grid-price-max">
+              100,000,000+
+            </span>
+            </div>
+            <div class="no-risk--grid-item">
+              <p class="no-risk--grid-title">
+                Our bid reduction
+              </p>
+              <p class="no-risk--grid-price">
+                £<span id="pricing-slider-bid">7500</span>
+              </p>
+              <p class="no-risk--grid-description">
+                We take a transparent bid reduction, the bid priced you receive is net of all costs.
+              </p>
+            </div>
+            <div class="no-risk--grid-item">
+              <p class="no-risk--grid-title">
+                Your incremental revenue
+              </p>
+              <p class="no-risk--grid-price">
+                £<span id="pricing-slider-revenue">7500</span>
+              </p>
+              <p class="no-risk--grid-description">
+                Estimated based on shifting open market demand into audience enhanced private deals.
+              </p>
+            </div>
           </div>
-          <div class="grid-item">
-            Your incremental revenue
+
+          <div class="no-risk__try_mobile">
+            <a href="#" class="button button--black">
+              Try EdgeKit
+            </a>
+            <p>No credit card required</p>
           </div>
+
+        </div>
+        <div class="no-risk-footer">
+          <span>We are also able to provide a flat monthly fee based on your site traffic.</span>
+          <a href="#">Contact us
+            <i>
+              <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.7812 6.35156C15.7812 6.10938 15.6797 5.875 15.5 5.70312L10.3672 0.570312C10.1641 0.375 9.95312 0.289062 9.73438 0.289062C9.23438 0.289062 8.875 0.640625 8.875 1.11719C8.875 1.36719 8.97656 1.57812 9.13281 1.73438L10.8906 3.51562L13.1562 5.58594L11.3438 5.47656H1.875C1.35156 5.47656 0.992188 5.83594 0.992188 6.35156C0.992188 6.85938 1.35156 7.21875 1.875 7.21875H11.3438L13.1562 7.10938L10.8906 9.17969L9.13281 10.9609C8.97656 11.1172 8.875 11.3281 8.875 11.5781C8.875 12.0547 9.23438 12.4062 9.73438 12.4062C9.95312 12.4062 10.1641 12.3203 10.3516 12.1406L15.5 6.99219C15.6797 6.82031 15.7812 6.58594 15.7812 6.35156Z"
+                      fill="currentColor" />
+              </svg>
+            </i>
+          </a>
         </div>
       </div>
     </section>
@@ -876,6 +1221,37 @@
           body.classList.add('burger-menu-open');
         }
       }
+
+      window.addEventListener('DOMContentLoaded', (event) => {
+        const pricingSlider = document.getElementById('pricing-slider');
+
+        const pricingInput = {
+          El: pricingSlider
+        };
+        pricingInput.data = JSON.parse(
+          pricingInput.El.getAttribute("data-price-input")
+        );
+        pricingInput.thumbSize = 30;
+
+        const pricingOutput = {
+          valueEl: document.getElementById('pricing-slider-value'),
+          bidEl: document.getElementById('pricing-slider-bid'),
+          revenueEl: document.getElementById('pricing-slider-revenue'),
+        };
+
+        pricingInput.El.setAttribute("min", 100000);
+        pricingInput.El.setAttribute("max", 100000000);
+        pricingInput.El.setAttribute("value", 50000000);
+
+        window.addEventListener("input", () => {
+          pricingOutput.valueEl.innerHTML = pricingInput.El.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          const revenue = Math.round(parseInt(pricingInput.El.value) / 1000 * 1.5);
+          const bid = Math.round(revenue * 0.1);
+          pricingOutput.revenueEl.innerHTML = revenue.toString();
+          pricingOutput.bidEl.innerHTML = bid;
+        });
+      });
+
     </script>
   </body>
 </html>
