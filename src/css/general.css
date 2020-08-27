@@ -750,13 +750,17 @@ p {
 }
 
 @media screen and (max-width: 550px) {
+    h1 {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 42px;
+    }
     h2 {
-        /* TODO: test manually */
         font-size: 32px;
         line-height: 32px;
     }
     h3 {
-        /* TODO: test manually */
         font-size: 32px;
         line-height: 32px;
     }

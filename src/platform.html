@@ -99,7 +99,7 @@
           margin-bottom: 96px;
         }
         .intro .section {
-          padding: 50px 0 48px;
+          padding: 40px 0 48px;
         }
         .intro-browser {
           top: 0;
@@ -108,8 +108,22 @@
           height: 250px;
           border-bottom-left-radius: 0;
         }
+        .intro .section h1 {
+          margin: 16px 0;
+        }
+        .intro .section p {
+          max-width: 338px;
+          font-size: 20px;
+          line-height: 26px;
+        }
       }
       @media screen and (max-width: 380px) {
+        h2 {
+          margin: 16px 0;
+        }
+        p {
+          margin: 12px 0;
+        }
         .intro .section {
           padding: 50px 0 48px;
         }
@@ -121,7 +135,6 @@
           border-bottom-left-radius: 0;
         }
       }
-
       .intro-browser .menu {
         height: 40px;
       }
@@ -146,6 +159,7 @@
       }
       @media screen and (max-width: 950px) {
         .for-publishers {
+          margin: 40px auto;
           padding: 48px 16px;
           border-radius: inherit;
         }
@@ -450,14 +464,29 @@
       }
 
       @media screen and (max-width: 620px) {
+        .container--medium-image {
+          margin: 40px auto;
+        }
         .container--medium-image > img {
           width: 608px;
         }
       }
 
       @media screen and (max-width: 550px) {
+        .for-publishers .grid-list .for-publishers__header {
+          margin: 0 auto 32px;
+        }
         .container--medium-image {
           margin-left: 16px;
+        }
+      }
+
+      .move-faster {
+        margin-top: 64px;
+      }
+      @media screen and (max-width: 600px) {
+        .move-faster {
+          margin-top: 40px;
         }
       }
       /* No Risk */
@@ -524,7 +553,7 @@
       .no-risk--grid-item input {
         width: 100%;
       }
-      .no-risk__try_desktop{
+      .no-risk__try_desktop {
         position: absolute;
         top: 156px;
         right: 216px;
@@ -533,7 +562,7 @@
       .no-risk__try_mobile {
         display: none;
       }
-      .no-risk__try_desktop .button, .no-risk__try_mobile .button{
+      .no-risk__try_desktop .button, .no-risk__try_mobile .button {
         font-style: normal;
         font-weight: 600;
         font-size: 18px;
@@ -592,7 +621,7 @@
           padding: 56px 32px 40px;
         }
         .no-risk-footer {
-            margin-bottom: 20px;
+          margin-bottom: 20px;
         }
         .no-risk__try_mobile {
           text-align: center;
@@ -620,6 +649,25 @@
         .no-risk-footer {
           font-size: 14px;
           line-height: 20px;
+        }
+      }
+      @media screen and (max-width: 500px) {
+        .no-risk--description {
+          padding-bottom: 40px;
+          margin-bottom: 40px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .no-risk--description h2 {
+          font-size: 32px;
+          line-height: 40px;
+        }
+        .no-risk--description p {
+          font-size: 18px;
+          line-height: 28px;
+        }
+        .no-risk--description p.paragraph-small {
+          font-size: 16px;
+          line-height: 24px;
         }
       }
       .no-risk--grid-title {
@@ -693,6 +741,22 @@
       @media screen and (max-width: 768px) {
         .no-risk--grid-description {
           max-width: 300px;
+        }
+      }
+
+      .features h3 {
+        margin: 0;
+      }
+      .features h2 {
+        margin-top: 0;
+      }
+      @media screen and (max-width: 768px) {
+        .features h3 {
+          margin-bottom: 6px;
+        }
+        .features h2 {
+          margin-top: 0;
+          margin-bottom: 16px;
         }
       }
 
@@ -826,7 +890,7 @@
             We help publishers monetise audience.
           </h1>
           <p>
-            The EdgeKit platform creates incremental<br /> revenue through private-by-design and<br /> cookie-less audience segmentation.
+            The EdgeKit platform creates incremental revenue through private-by-design and<br /> cookie-less audience segmentation.
           </p>
           <a href="#" class="button button--black intro__button">
             Try EdgeKit
@@ -1040,7 +1104,7 @@
     </section>
 
     <section class="section">
-      <div class="container section-heading">
+      <div class="container section-heading features">
         <h3>
           Features
         </h3>
