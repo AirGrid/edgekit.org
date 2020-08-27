@@ -389,7 +389,7 @@ a {
         position: relative;
         justify-content: flex-start;
     }
-    .nav-mobile-buttons {
+    .footer .nav-mobile-buttons {
         position: absolute;
         right: 32px;
     }
@@ -649,7 +649,7 @@ body.burger-menu-open .menu-mobile .nav-mobile, body.burger-menu-open .menu-mobi
     .footer .nav .nav__link{
         margin: 16px auto;
     }
-    .nav-mobile-buttons {
+    .footer .nav-mobile-buttons {
         position: initial;
     }
 
