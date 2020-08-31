@@ -714,6 +714,10 @@ body.burger-menu-open .menu-mobile .nav-mobile-buttons {
   background: #171717;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.button--black-white:hover {
+  background: #ffffff;
+  color: #2c5ef6;
+}
 .button--outline {
   border-radius: 6px;
   box-sizing: border-box;
@@ -773,15 +777,15 @@ p {
   }
   h2 {
     font-size: 32px;
-    line-height: 32px;
+    line-height: 40px;
   }
   h3 {
-    font-size: 32px;
-    line-height: 32px;
+    font-size: 28px;
+    line-height: 28px;
   }
   p {
-    font-size: 20px;
-    line-height: 32px;
+    font-size: 18px;
+    line-height: 28px;
   }
 }
 /* HOOD */

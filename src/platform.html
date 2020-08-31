@@ -499,7 +499,6 @@
           border-bottom-right-radius: 0;
         }
       }
-
       @media screen and (max-width: 620px) {
         .container--medium-image {
           margin: 40px auto;
@@ -508,7 +507,6 @@
           width: 608px;
         }
       }
-
       @media screen and (max-width: 550px) {
         .for-publishers .grid-list .for-publishers__header {
           margin: 0 auto 32px;
@@ -517,7 +515,15 @@
           margin-left: 16px;
         }
       }
-
+      .section__move-faster p {
+        max-width: 655px;
+      }
+      .section__features p {
+        max-width: 490px;
+      }
+      .section__deal-revenue p {
+        max-width: 580px;
+      }
       .move-faster {
         margin-top: 64px;
       }
@@ -1152,9 +1158,9 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section__move-faster">
       <div class="container section-heading">
-        <h2>Move faster with a hosted EdgeKit service.</h2>
+        <h2>Move faster with <br />a hosted EdgeKit service.</h2>
         <p>
           Built for publishers who’d rather spend time creating content than
           managing ad-tech infrastructure.
@@ -1205,7 +1211,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section__features">
       <div class="container section-heading features">
         <h3>Features</h3>
         <h2>Analytics.</h2>
@@ -1234,7 +1240,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section__deal-revenue">
       <div class="container section-heading">
         <h2>Deal revenue.</h2>
         <p>
@@ -1265,7 +1271,7 @@
           </div>
 
           <div class="no-risk__try_desktop">
-            <a href="#" class="button button--black"> Try EdgeKit </a>
+            <a href="#" class="button button--black button--black-white"> Try EdgeKit </a>
             <p>No credit card required</p>
           </div>
 
