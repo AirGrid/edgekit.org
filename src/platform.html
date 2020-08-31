@@ -755,6 +755,9 @@
         opacity: 1;
         cursor: pointer;
       }
+      .pricing-slider-currency {
+        margin-right: -5px;
+      }
       @media screen and (max-width: 768px) {
         .no-risk--grid-description {
           max-width: 300px;
@@ -1257,10 +1260,10 @@
               </p>
               <input
                 type="range"
-                min="100000"
+                min="5000000"
                 max="100000000"
                 value="50000000"
-                step="1000"
+                step="5000000"
                 id="pricing-slider"
               />
               <span class="no-risk--grid-price-min"> 100,000 </span>
@@ -1269,8 +1272,8 @@
             <div class="no-risk--grid-item">
               <p class="no-risk--grid-title">Our bid reduction</p>
               <p class="no-risk--grid-price">
-                <span class="pricing-slider-currency">£</span
-                ><span id="pricing-slider-bid">7500</span>
+                <span class="pricing-slider-currency">£</span>
+                <span id="pricing-slider-bid">7,500</span>
               </p>
               <p class="no-risk--grid-description">
                 We take a transparent bid reduction, the bid priced you receive
@@ -1278,10 +1281,10 @@
               </p>
             </div>
             <div class="no-risk--grid-item">
-              <p class="no-risk--grid-title">Your incremental revenue</p>
+              <p class="no-risk--grid-title"> Your incremental revenue </p>
               <p class="no-risk--grid-price">
-                <span class="pricing-slider-currency">£</span
-                ><span id="pricing-slider-revenue">7500</span>
+                <span class="pricing-slider-currency">£</span>
+                <span id="pricing-slider-revenue">75,000</span>
               </p>
               <p class="no-risk--grid-description">
                 Estimated based on shifting open market demand into audience
@@ -1438,6 +1441,13 @@
         }
       }
 
+      function splitCommaBigNumber(string) {
+        return string.replace(
+          /\B(?=(\d{3})+(?!\d))/g,
+          ","
+        )
+      }
+
       window.addEventListener("DOMContentLoaded", (event) => {
         const pricingSlider = document.getElementById("pricing-slider");
 
@@ -1458,15 +1468,27 @@
           ),
         };
 
-        pricingInput.El.setAttribute("min", 100000);
+        const step = 5000000;
+        pricingInput.El.setAttribute("min", step);
         pricingInput.El.setAttribute("max", 100000000);
         pricingInput.El.setAttribute("value", 50000000);
+        pricingInput.El.setAttribute("step", step);
 
         window.addEventListener("input", () => {
-          pricingOutput.valueEl.innerHTML = pricingInput.El.value.replace(
-            /\B(?=(\d{3})+(?!\d))/g,
-            ","
-          );
+          if(pricingInput.El.value <= 1000000) {
+            const step = 100000;
+            pricingInput.El.setAttribute("min", step);
+            pricingInput.El.setAttribute("step", step);
+          } else if(pricingInput.El.value <= 10000000) {
+            const step = 1000000;
+            pricingInput.El.setAttribute("min", step);
+            pricingInput.El.setAttribute("step", step);
+          } else {
+            const step = 5000000;
+            pricingInput.El.setAttribute("min", step);
+            pricingInput.El.setAttribute("step", step);
+          }
+          pricingOutput.valueEl.innerHTML = splitCommaBigNumber(pricingInput.El.value);
           const revenue = Math.round(
             (parseInt(pricingInput.El.value) / 1000) * 1.5
           );
@@ -1481,8 +1503,8 @@
             });
             return;
           }
-          pricingOutput.revenueEl.innerHTML = revenue.toString();
-          pricingOutput.bidEl.innerHTML = bid;
+          pricingOutput.revenueEl.innerHTML = splitCommaBigNumber(revenue.toString());
+          pricingOutput.bidEl.innerHTML = splitCommaBigNumber(bid.toString());
           Array.from(pricingOutput.currencyEls).forEach((el) => {
             el.hidden = false;
           });
