@@ -225,7 +225,14 @@
       .for-publishers .for-publishers__grey-block:after {
         right: -56px;
       }
-      .for-publishers .for-publishers__white-block h5 {
+      .for-publishers .for-publishers__title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 30px;
+      }
+      .for-publishers .for-publishers__white-block span {
+
         display: flex;
         justify-content: space-between;
       }
@@ -233,10 +240,15 @@
         position: relative;
         background: #e6e6ec;
         border-radius: 20px;
-        padding: 40px;
-        padding-bottom: 52px;
+        padding: 40px 0;
       }
-      .for-publishers .for-publishers__grey-block h5 {
+      @media screen and (min-width: 951px) {
+        .for-publishers .for-publishers__grey-block {
+          padding: 40px;
+          padding-bottom: 52px;
+        }
+      }
+      .for-publishers .for-publishers__grey-block span {
         margin-bottom: 32px;
       }
       .for-publishers .for-publishers__grey-block ul li {
@@ -244,7 +256,7 @@
         font-weight: 500;
         font-size: 14px;
         line-height: 14px;
-        margin: 12px 0;
+        margin-top: 12px;
         padding: 9px 10px;
       }
       .for-publishers .for-publishers__grey-block ul li:nth-child(2) {
@@ -260,6 +272,7 @@
         background-color: #f0f0f0;
       }
       .for-publishers .for-publishers__interest-list {
+        margin-top: 20px;
         list-style: none;
       }
       .for-publishers .for-publishers__interest-item {
@@ -856,7 +869,7 @@
     <div class="intro">
       <header class="container container--medium header">
         <div class="header__logo">
-          <img src="./images/title-logo-white.svg" aria-label="Logo" />
+          <img src="./images/title-logo-white.svg" aria-label="Logo" alt="EdgeKit"/>
         </div>
 
         <nav class="nav">
@@ -891,6 +904,7 @@
             href="https://github.com/AirGrid/edgekit"
             target="_blank"
             rel="noreferrer"
+            aria-label="GitHub"
           >
             <svg
               width="18"
@@ -949,8 +963,8 @@
           </span>
         </nav>
         <nav class="nav-buttons only_desktop">
-          <a class="button button--outline"> Log in </a>
-          <a class="button button--black"> Sign up </a>
+          <a class="button button--outline" rel="nofollow"> Log in </a>
+          <a class="button button--black" rel="nofollow"> Sign up </a>
         </nav>
       </header>
       <div class="menu-mobile">
@@ -968,8 +982,8 @@
         </nav>
 
         <nav class="nav-mobile-buttons">
-          <a class="button button--outline"> Log in </a>
-          <a class="button button--black"> Sign up </a>
+          <a class="button button--outline" rel="nofollow"> Log in </a>
+          <a class="button button--black" rel="nofollow"> Sign up </a>
         </nav>
       </div>
 
@@ -1030,7 +1044,7 @@
             </div>
 
             <div class="for-publishers__white-block">
-              <h5>
+              <span class="for-publishers__title">
                 Publisher
                 <svg
                   width="26"
@@ -1048,7 +1062,7 @@
                     fill="#B05AF4"
                   />
                 </svg>
-              </h5>
+              </span>
               <div class="browser-block">
                 <div class="menu">
                   <span class="bullet"></span>
@@ -1066,7 +1080,7 @@
               </div>
             </div>
             <div class="for-publishers__arrow only_mobile">
-              <img src="images/arrow-down.svg" />
+              <img src="images/arrow-down.svg" alt="Arrow" />
             </div>
           </div>
 
@@ -1077,7 +1091,7 @@
             </div>
 
             <div class="for-publishers__grey-block">
-              <h5>Bid request</h5>
+              <span class="for-publishers__title">Bid request</span>
               <ul class="for-publishers__interest-list">
                 <li class="for-publishers__interest-item">
                   <span class="for-publishers__interest-item-id">352</span
@@ -1098,7 +1112,7 @@
               </ul>
             </div>
             <div class="for-publishers__arrow only_mobile">
-              <img src="images/arrow-down.svg" />
+              <img src="images/arrow-down.svg" alt="Arrow" />
             </div>
           </div>
 
@@ -1109,7 +1123,7 @@
             </div>
 
             <div class="for-publishers__white-block">
-              <h5>Marketer</h5>
+              <span class="for-publishers__title">Marketer</span>
               <div class="browser-block">
                 <div class="menu">
                   <span class="bullet"></span>
@@ -1145,7 +1159,7 @@
               </div>
             </div>
             <div class="for-publishers__arrow">
-              <img src="images/arrow-down.svg" />
+              <img src="images/arrow-down.svg" alt="Arrow" />
             </div>
           </div>
         </div>
@@ -1234,7 +1248,11 @@
       </div>
 
       <div class="container--medium container--medium-image">
-        <img src="images/audience-chart.png" />
+        <img
+          srcset="images/audience-chart-2x.png 2432w,
+          images/audience-chart.png 1216w,
+          images/audience-chart-mob.png 608w"
+          src="images/audience-chart-mob.png" />
       </div>
     </section>
 
@@ -1248,7 +1266,7 @@
       </div>
 
       <div class="container--medium container--medium-image">
-        <img src="images/features-list.png" />
+        <img src="images/features-list.png" alt="Features list" />
       </div>
     </section>
 
@@ -1262,7 +1280,7 @@
       </div>
 
       <div class="container--medium container--medium-image">
-        <img src="images/audience-list.png" />
+        <img src="images/audience-list.png" alt="Audience list"/>
       </div>
     </section>
 
@@ -1289,11 +1307,12 @@
 
           <div class="no-risk--grid-list">
             <div class="no-risk--grid-item">
-              <p class="no-risk--grid-title">Your monthly page views</p>
+              <p id="no-risk--grid-title" class="no-risk--grid-title">Your monthly page views</p>
               <p class="no-risk--grid-price" id="pricing-slider-value">
                 50,000,000
               </p>
               <input
+                aria-label="no-risk--grid-title"
                 type="range"
                 min="5000000"
                 max="100000000"
@@ -1361,7 +1380,7 @@
 
     <footer class="container footer">
       <div class="footer__logo">
-        <img src="./images/title-logo.svg" aria-label="Logo" />
+        <img src="./images/title-logo.svg" aria-label="Logo" alt="EdgeKit"/>
       </div>
 
       <div class="footer__build">
@@ -1379,7 +1398,7 @@
           >Docs</a
         >
 <!--        <a class="nav__link" href="#" rel="noreferrer">Blog</a>-->
-        <a class="nav__link" href="mailto:hello@edgekit.org" rel="noreferrer">
+        <a class="nav__link" href="mailto:hello@edgekit.org" rel="noreferrer" aria-label="Mailto">
           <svg
             width="20"
             height="16"
@@ -1398,6 +1417,7 @@
           href="https://github.com/AirGrid/edgekit"
           target="_blank"
           rel="noreferrer"
+          aria-label="GitHub"
         >
           <svg
             width="18"
@@ -1415,8 +1435,8 @@
       </nav>
 
       <nav class="nav-mobile-buttons">
-        <a class="button button--outline button--white"> Log in </a>
-        <a class="button button--black"> Sign up </a>
+        <a class="button button--outline button--white" rel="nofollow"> Log in </a>
+        <a class="button button--black" rel="nofollow"> Sign up </a>
       </nav>
     </footer>
     <div class="container footer footer-tablet">
@@ -1430,7 +1450,7 @@
         >Docs</a
       >
 <!--      <a class="nav__link" href="#" rel="noreferrer">Blog</a>-->
-      <a class="nav__link" href="mailto:hello@edgekit.org" rel="noreferrer">
+      <a class="nav__link" href="mailto:hello@edgekit.org" rel="noreferrer" aria-label="Mailto">
         <svg
           width="20"
           height="16"
@@ -1449,6 +1469,7 @@
         href="https://github.com/AirGrid/edgekit"
         target="_blank"
         rel="noreferrer"
+        aria-label="GitHub"
       >
         <svg
           width="18"
