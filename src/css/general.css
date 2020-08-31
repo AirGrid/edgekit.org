@@ -671,7 +671,7 @@ body.burger-menu-open .menu-mobile .nav-mobile-buttons {
     display: none;
   }
   .nav__link--active {
-    padding: 0;
+    padding: 0 0 6px;
   }
 }
 

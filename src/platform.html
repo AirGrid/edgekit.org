@@ -20,27 +20,31 @@
           180.02deg,
           #324069 -1.38%,
           #2c5ef6 40.75%,
-          #648aff 86.78%
+          #648aff 71.78%,
+          #ffffff 50%
         );
-        margin-bottom: 200px;
+        margin-bottom: 216px;
       }
       .intro .section {
         color: #ffffff;
-        padding: 220px 0 150px;
-        margin: 0;
+        padding: 56px 0 72px;
+        margin: 0 auto;
+        text-align: center;
       }
       .intro .section h1 {
         max-width: 540px;
-        margin: 24px 0;
+        margin: 24px auto;
       }
       .intro .section p {
-        max-width: 500px;
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 600px;
+        margin: 0 auto;
       }
       .intro .section .intro__button {
         display: block;
         width: 180px;
         height: 56px;
-        margin: 32px 0 16px;
+        margin: 32px auto 16px;
         padding: 20px;
         font-weight: 600;
         font-size: 18px;
@@ -60,58 +64,76 @@
         margin: 16px 0;
       }
       .intro-browser {
-        position: absolute;
-        right: 0;
-        top: 205px;
-        background: rgba(255, 255, 255, 0.2);
-        box-shadow: 0 16px 20px rgba(0, 0, 0, 0.06);
+        background: #EAEAEF;
         backdrop-filter: blur(8px);
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-        padding: 0 0 10px 10px;
+        border-radius: 10px;
+        padding: 0 10px 10px;
+        margin: 0 auto;
+        max-width: 1024px;
       }
-      @media screen and (max-width: 1570px) {
-        .intro-browser {
-          overflow: hidden;
-          width: calc(100vw - 840px);
-        }
+      .intro-browser img {
+        width: 1004px;
       }
       @media screen and (max-width: 1024px) {
-        .intro .section {
-          padding: 80px 0 135px;
-        }
         .intro-browser {
-          position: relative;
-          top: -64px;
-          right: -290px;
-          width: calc(100vw - 290px);
+          max-width: 768px;
+        }
+        .intro-browser img {
+          width: 748px;
         }
       }
       @media screen and (max-width: 768px) {
         .intro {
+          background: linear-gradient(
+            180.02deg,
+            #324069 -1.38%,
+            #2c5ef6 40.75%,
+            #648aff 86.78%
+          );
+          padding-bottom: 64px;
           margin-bottom: 180px;
         }
         .intro .section {
-          padding: 50px 0 102px;
+          padding: 32px 0 70px;
+          text-align: left;
+        }
+        .intro .section h1 {
+          max-width: 540px;
+          margin: 24px 0;
+        }
+        .intro .section p {
+          color: rgba(255, 255, 255, 0.8);
+          max-width: 600px;
+          margin: 0;
         }
         .intro-browser {
-          right: -50px;
-          width: calc(100vw - 50px);
+          position: relative;
+          left: 32px;
+          width: calc(100vw - 32px);
+          background: rgba(255, 255, 255, 0.2);
+          box-shadow: 0 16px 20px rgba(0, 0, 0, 0.06);
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          margin: 0;
+          padding: 0 0 0 10px;
+          overflow: hidden;
+        }
+        .intro-browser img {
+          width: 800px;
+        }
+        .intro .section .intro__button {
+          margin: 32px 0 16px
         }
       }
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: 550px) {
         .intro {
           margin-bottom: 96px;
+          padding-bottom: 0;
         }
         .intro .section {
           padding: 40px 0 48px;
-        }
-        .intro-browser {
-          top: 0;
-          right: -115px;
-          width: calc(100vw - 115px);
-          height: 250px;
-          border-bottom-left-radius: 0;
         }
         .intro .section h1 {
           margin: 16px 0;
@@ -120,6 +142,16 @@
           max-width: 338px;
           font-size: 20px;
           line-height: 26px;
+        }
+        .intro-browser {
+          top: 0;
+          left: 16px;
+          width: calc(100% - 16px);
+          height: 350px;
+          border-bottom-left-radius: 0;
+        }
+        .intro-browser .intro-browser-image img {
+          width: 502px;
         }
       }
       @media screen and (max-width: 380px) {
@@ -136,8 +168,12 @@
           top: 0;
           left: 16px;
           width: calc(100% - 16px);
-          height: 250px;
+          height: 350px;
           border-bottom-left-radius: 0;
+        }
+        .intro-browser .intro-browser-image img {
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
         }
       }
       .intro-browser .menu {
@@ -152,8 +188,7 @@
         background: rgba(255, 255, 255, 0.5);
       }
       .intro-browser .intro-browser-image img {
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
+        border-radius: 10px;
       }
       /** for-publishers  */
       .for-publishers {
@@ -376,7 +411,7 @@
         margin: 6px;
       }
       .browser-block .browser-content.browser-content--campaigns .triangle {
-        margin: 0;
+        margin: 0 5px;
         height: 8px;
         line-height: 0;
       }
@@ -983,10 +1018,9 @@
           <h1>We help publishers monetise audience.</h1>
           <p>
             The EdgeKit platform creates incremental revenue through
-            private-by-design and<br />
-            cookie-less audience segmentation.
+            private-by-design and cookie-less audience segmentation.
           </p>
-          <a href="#" class="button button--black intro__button">
+          <a href="#" class="button button--black button--black-white intro__button">
             Try EdgeKit
           </a>
           <p class="paragraph-small">No credit card required</p>
@@ -1000,10 +1034,11 @@
           <span class="bullet"></span>
         </div>
         <div class="intro-browser-image">
-          <img srcset="images/plat-intro-tablet.png 480w, images/plat-intro-tablet.png 1024w"
-               sizes="(max-width: 480px) 500px, 1024px"
-               src="images/plat-intro.png"
-               alt="Intro"
+          <img srcset="images/plat-intro.png 1004w,
+            images/plat-intro-tablet.png 800px,
+            images/plat-intro-mob.png 502w"
+            src="images/plat-intro.png"
+            alt="Intro"
           />
         </div>
       </div>
