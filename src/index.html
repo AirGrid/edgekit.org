@@ -696,18 +696,20 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 56px;
-        color: rgba(23, 23, 23, 0.5);
+        color: #171717;
         padding: 20px 24px;
         border-top-left-radius: 6px;
         border-bottom-left-radius: 6px;
         background-color: #f5f5f7;
-        border: none;
         height: 56px;
         outline: none;
         transition: 0.3s ease-out;
         border: 1px solid transparent;
         border-right: none;
         -webkit-appearance: none;
+      }
+      .subscribe__form-field:focus ~ .subscribe__form-submit {
+        background-color: #2c5ef6;
       }
       @media screen and (max-width: 550px) {
         .subscribe__form-field {
@@ -1928,6 +1930,7 @@
               </div>
             </div>
             <a
+              target="_blank"
               href="https://airgrid.io"
               class="deployment__more"
               rel="noreferrer"

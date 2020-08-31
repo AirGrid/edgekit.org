@@ -350,12 +350,14 @@ a {
 }
 .header,
 .footer {
+  margin-bottom: 48px;
   padding-top: 24px;
   padding-bottom: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .footer .nav {
   padding: 0 30px;
 }
@@ -376,6 +378,12 @@ a {
   display: none;
 }
 @media screen and (max-width: 950px) {
+  .footer {
+    margin-bottom: 0;
+  }
+  .footer-tablet {
+    margin-bottom: 48px;
+  }
   .footer-tablet {
     display: block;
   }
@@ -655,6 +663,9 @@ body.burger-menu-open .menu-mobile .nav-mobile-buttons {
   }
   .footer .nav-mobile-buttons {
     position: initial;
+  }
+  .footer {
+    margin-bottom: 48px;
   }
   .footer-tablet {
     display: none;
