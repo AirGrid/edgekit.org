@@ -462,7 +462,7 @@ a {
   align-items: center;
 
   width: 100%;
-  max-width: calc(1024px);
+  max-width: calc(1020px);
   padding: 0 32px;
   margin: 0 auto;
 }
