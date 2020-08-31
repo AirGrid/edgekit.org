@@ -180,6 +180,9 @@
         width: 16px;
         margin-right: 12px;
       }
+      .intro__field-button.copied svg {
+        margin-right: 8px;
+      }
       .intro__field-text {
         border-top-left-radius: 6px;
         border-bottom-left-radius: 6px;
@@ -331,11 +334,13 @@
       /* Integrates */
       /* =================== */
       .integrate--title {
+        max-width: 430px;
         margin-bottom: 0;
         color: #171717;
       }
       @media screen and (max-width: 550px) {
         .integrate--title {
+          max-width: 280px;
           font-size: 32px;
           line-height: 40px;
         }
@@ -543,6 +548,13 @@
           margin-bottom: 16px;
         }
       }
+      .community__descr {
+        max-width: 640px;
+      }
+
+      .community__descr_second {
+        max-width: 590px;
+      }
       .community__descr p {
         font-weight: normal;
         font-size: 16px;
@@ -550,8 +562,9 @@
         color: #505050;
       }
       .community__descr a {
-        font-weight: 700;
-        text-decoration: underline;
+        text-decoration: none;
+        border-bottom: 1px solid #000;
+        font-weight: 600;
         color: #333;
         transition: color 0.3s ease-out;
       }
@@ -572,6 +585,11 @@
       }
       @media screen and (max-width: 768px) {
         .community__icon {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 685px) {
+        br {
           display: none;
         }
       }
@@ -689,6 +707,7 @@
         transition: 0.3s ease-out;
         border: 1px solid transparent;
         border-right: none;
+        -webkit-appearance: none;
       }
       @media screen and (max-width: 550px) {
         .subscribe__form-field {
@@ -1626,10 +1645,10 @@
                 the online advertising industry, due to a lack of standards &
                 quality control. Recent initiatives from the IAB, such as the
                 <a href="" rel="noreferrer">Data Transparency Framework</a> aim
-                to address this by applying “nutrition labels” to audience
+                to address this by applying <br />“nutrition labels” to audience
                 segments.
               </p>
-              <p>
+              <p class="community__descr_second">
                 EdgeKit goes one step further and defines these audiences in
                 open source code for all to see, and improve together.
               </p>
@@ -2086,6 +2105,9 @@
         const btn = this;
         const prevText = btn.querySelector(".text").innerText;
         const copiedText = "Copied";
+        if(prevText === copiedText) {
+          return;
+        }
         navigator.clipboard.writeText(btn.dataset.value);
         btn.classList.add("copied");
         btn.querySelector(".text").innerText = copiedText;
