@@ -1361,7 +1361,7 @@
               <input
                 aria-label="no-risk--grid-title"
                 type="range"
-                min="5000000"
+                min="0"
                 max="100000000"
                 value="50000000"
                 step="5000000"
@@ -1643,7 +1643,7 @@
         };
 
         const step = 5000000;
-        pricingInput.El.setAttribute("min", step);
+        pricingInput.El.setAttribute("min", 0);
         pricingInput.El.setAttribute("max", 100000000);
         pricingInput.El.setAttribute("value", 50000000);
         pricingInput.El.setAttribute("step", step);
@@ -1659,7 +1659,7 @@
             pricingInput.El.setAttribute("step", step);
           } else {
             const step = 5000000;
-            pricingInput.El.setAttribute("min", step);
+            pricingInput.El.setAttribute("min", 0);
             pricingInput.El.setAttribute("step", step);
           }
           pricingOutput.valueEl.innerHTML = splitCommaBigNumber(pricingInput.El.value);
