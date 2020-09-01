@@ -1018,13 +1018,14 @@ textarea::placeholder {
   font-size: 18px;
   line-height: normal;
   color: #171717;
-  padding: 20px 24px;
+  box-sizing: border-box;
+  padding: 24px;
   border-radius: 6px;
-  background-color: #ffffff;
+  background: #ffffff;
   height: 56px;
   outline: none;
   transition: 0.3s ease-out;
-  border: 1px solid #D6D6D6;
+  border: 1px solid #d6d6d6;
   margin: 10px 0;
   -webkit-appearance: none;
 }
@@ -1040,8 +1041,11 @@ textarea.contact__form-field {
 .contact__form-field:focus ~ .subscribe__form-submit {
   background-color: #2c5ef6;
 }
+.contact__form-field:hover:not(:focus) {
+  border-color: #c6c6c6;
+}
 .contact__form-field:focus,
-.contact__form-field:hover {
+.contact__form-field:active {
   border-color: #2c5ef6;
   background-color: #fff;
 }
@@ -1092,7 +1096,6 @@ textarea.contact__form-field {
   }
   .contact__form-field {
     border-radius: 6px;
-    border-right: 1px solid transparent;
   }
   textarea.contact__form-field {
     height: 104px;
