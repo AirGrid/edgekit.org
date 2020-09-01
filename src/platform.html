@@ -1858,7 +1858,7 @@
         fetch("/", {
           method: "POST",
           headers: {"Content-Type": "application/x-www-form-urlencoded"},
-          body: encode({"form-name": form.name, email,}),
+          body: encode({"form-name": 'contact', email, name, message}),
         });
         const formWrapper = document.getElementById('contact');
         formWrapper.classList.add("form-submitted");
