@@ -1670,22 +1670,40 @@
           .join("&");
       };
 
-      function openModal(event) {
-        event.preventDefault();
-        const formWrapper = document.getElementById('contact');
-        formWrapper.classList.remove("hide");
-        formWrapper.classList.remove("not-visible");
+      const contactModalId = 'contact';
+      let open = false;
+
+      function getModal() {
+        return document.getElementById(contactModalId);
       }
 
-      function closeModel() {
-        const formWrapper = document.getElementById('contact');
-        formWrapper.classList.add("hide");
-        setTimeout(function() {
-          formWrapper.classList.add("not-visible");
+      document.addEventListener('click', function (event) {
+        var isClickInside = getModal().firstElementChild.contains(event.target);
+
+        if (!isClickInside && open) {
+          closeModel();
+        }
+      });
+
+      function openModal(event) {
+        event.preventDefault();
+
+        getModal().classList.remove("hide");
+        getModal().classList.remove("not-visible");
+        setTimeout(function () {
+          open = true;
         }, 400);
       }
 
-      function submitForm(event) {
+      function closeModel() {
+        getModal().classList.add("hide");
+        setTimeout(function () {
+          getModal().classList.add("not-visible");
+        }, 400);
+        open = false;
+      }
+
+      function submitContactForm(event) {
         event.preventDefault();
         const form = event.target;
         const formObject = new FormData(form);
@@ -1698,8 +1716,7 @@
           headers: {"Content-Type": "application/x-www-form-urlencoded"},
           body: encode({"form-name": 'contact', email, name, message}),
         });
-        const formWrapper = document.getElementById('contact');
-        formWrapper.classList.add("form-submitted");
+        getModal().classList.add("form-submitted");
       }
 
       const activeFields = [];
