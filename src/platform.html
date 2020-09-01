@@ -185,7 +185,7 @@
         display: inline-block;
         width: 10px;
         height: 10px;
-        margin: 15px 8px;
+        margin: 15px 4px;
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.5);
       }
@@ -1076,7 +1076,7 @@
             Docs
           </a>
           <!--          <a class="nav__link only_desktop" href="#" rel="noreferrer">Blog</a>-->
-          <a class="nav__link" href="mailto:hello@edgekit.org" rel="noreferrer" aria-label="Mailto">
+          <a onclick="openModal(event)" class="nav__link" href="" rel="noreferrer" aria-label="Mailto">
             <svg
               width="20"
               height="16"
@@ -1186,7 +1186,7 @@
             The EdgeKit platform creates incremental revenue through
             private-by-design and cookie-less audience segmentation.
           </p>
-          <a href="#" onclick="openModal()" class="button button--black button--black-white intro__button">
+          <a href="#" onclick="openModal(event)" class="button button--black button--black-white intro__button">
             Try EdgeKit
           </a>
           <p class="paragraph-small">No credit card required</p>
@@ -1200,10 +1200,7 @@
           <span class="bullet"></span>
         </div>
         <div class="intro-browser-image">
-          <img srcset="images/plat-intro.png 1004w,
-            images/plat-intro-tablet.png 800w,
-            images/plat-intro-mob.png 502w"
-               src="images/plat-intro.png"
+          <img src="images/plat-intro.png"
                alt="Intro"
           />
         </div>
@@ -1456,7 +1453,11 @@
       </div>
 
       <div class="container--medium container--medium-image">
-        <img src="images/features-list.png" alt="Features list" />
+        <img
+          srcset="images/features-list-2x.png 2432w,
+          images/features-list.png 1216w,
+          images/features-list-mob.png 608w"
+          src="images/features-list.png" alt="Features list" />
       </div>
     </section>
 
@@ -1470,7 +1471,11 @@
       </div>
 
       <div class="container--medium container--medium-image">
-        <img src="images/audience-list.png" alt="Audience list" />
+        <img
+          srcset="images/audience-list-2x.png 2432w,
+          images/audience-list.png 1216w,
+          images/audience-list-mob.png 608w"
+          src="images/audience-list.png" alt="Audience list" />
       </div>
     </section>
 
@@ -1491,7 +1496,7 @@
           </div>
 
           <div class="no-risk__try_desktop">
-            <a href="#" onclick="openModal()" class="button button--black button--black-white"> Try EdgeKit </a>
+            <a href="#" onclick="openModal(event)" class="button button--black button--black-white"> Try EdgeKit </a>
             <p>No credit card required</p>
           </div>
 
@@ -1546,7 +1551,7 @@
           <span>
             We are also able to provide a flat monthly fee based on your site traffic.
           </span>
-          <a id="contact-us-for-copy" href="#" onclick="openModal()">
+          <a id="contact-us-for-copy" href="#" onclick="openModal(event)">
             Contact us
             <i>
               <svg
@@ -1588,7 +1593,7 @@
           Docs
         </a>
         <!--        <a class="nav__link" href="#" rel="noreferrer">Blog</a>-->
-        <a class="nav__link" href="mailto:hello@edgekit.org" rel="noreferrer" aria-label="Mailto">
+        <a onclick="openModal(event)" class="nav__link" href="#" rel="noreferrer" aria-label="Mailto">
           <svg
             width="20"
             height="16"
@@ -1641,7 +1646,7 @@
         Docs
       </a>
       <!--      <a class="nav__link" href="#" rel="noreferrer">Blog</a>-->
-      <a class="nav__link" href="mailto:hello@edgekit.org" rel="noreferrer" aria-label="Mailto">
+      <a onclick="openModal(event)" class="nav__link" href="#" rel="noreferrer" aria-label="Mailto">
         <svg
           width="20"
           height="16"
@@ -1837,7 +1842,8 @@
           .join("&");
       };
 
-      function openModal() {
+      function openModal(event) {
+        event.preventDefault();
         const formWrapper = document.getElementById('contact');
         formWrapper.classList.remove("hide");
       }
