@@ -861,6 +861,167 @@
       #contact-us-for-copy:hover {
         color: #000000;
       }
+      .contact-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(57, 72, 115, 0.95);
+        z-index: 2;
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        justify-content: center;
+        transition: all 0.2s;
+      }
+      .contact-modal.hide {
+        opacity: 0;
+        z-index: -1;
+      }
+      .contact-modal .contact-modal__container {
+        position: relative;
+        margin: auto;
+        padding: 56px;
+        background: #FFFFFF;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        text-align: center;
+      }
+      .contact-modal .xmark {
+        position: absolute;
+        top: 28px;
+        right: 28px;
+        cursor: pointer;
+      }
+      .contact-modal h2 {
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 40px;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      .contact-modal p {
+        max-width: 330px;
+        font-size: 18px;
+        line-height: 26px;
+        color: #333333;
+        margin: 0 auto;
+      }
+      .contact-modal p.success-desc {
+        margin-bottom: 96px;
+      }
+      .contact__form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+      }
+      .form-submitted .contact__form {
+        display: none;
+      }
+      .form-submitted .hide_on_success {
+        display: none;
+      }
+      .form-success {
+        display: none;
+      }
+      .form-submitted .form-success {
+        display: block;
+      }
+      .contact-modal .button {
+        width: 100%;
+        height: 64px;
+        margin: 0;
+        margin-top: 30px;
+        padding: 22px 0 26px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 16px;
+      }
+      .contact__form-field {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 16px;
+        color: rgba(23, 23, 23, 0.5);
+        padding: 20px 24px;
+        border-radius: 6px;
+        background-color: #ffffff;
+        color: #171717;
+        height: 56px;
+        outline: none;
+        transition: 0.3s ease-out;
+        border: 1px solid #D6D6D6;
+        margin: 10px 0;
+        -webkit-appearance: none;
+      }
+      textarea.contact__form-field {
+        letter-spacing: -0.06em;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 24px;
+        height: 136px;
+      }
+      .contact__form-field:focus ~ .subscribe__form-submit {
+        background-color: #2c5ef6;
+      }
+      .contact__form-field:focus,
+      .contact__form-field:hover {
+        border-color: #2c5ef6;
+        background-color: #fff;
+      }
+      .multi-icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+        margin: 24px;
+      }
+      .multi-icons__checkmark {
+        position: absolute;
+      }
+      .multi-icons__checkmark svg {
+        height: 40px;
+        width: 40px;
+      }
+      .multi-icons__circle {
+        border-radius: 50%;
+        height: 96px;
+        width: 96px;
+        padding: 10px;
+        background: #E6ECFE;
+      }
+      .multi-icons__circle-border {
+        height: 96px;
+        width: 96px;
+        border-radius: 50%;
+      }
+      @media screen and (max-width: 550px) {
+        .contact-modal .contact-modal__container {
+          padding: 40px 24px;
+          margin: auto 16px;
+        }
+        .contact-modal h2 {
+          font-size: 32px;
+          line-height: 40px;
+          margin-bottom: 12px;
+        }
+        .contact-modal p {
+          max-width: 295px;
+          font-size: 16px;
+          line-height: 24px;
+        }
+        .contact__form {
+          margin-top: 30px;
+        }
+        .contact__form-field {
+          border-radius: 6px;
+          border-right: 1px solid transparent;
+        }
+        textarea.contact__form-field {
+          height: 104px;
+        }
+      }
+
     </style>
     <!-- Favicon -->
     <link
@@ -1022,7 +1183,7 @@
             The EdgeKit platform creates incremental revenue through
             private-by-design and cookie-less audience segmentation.
           </p>
-          <a href="#" class="button button--black button--black-white intro__button">
+          <a href="#" onclick="openModal()" class="button button--black button--black-white intro__button">
             Try EdgeKit
           </a>
           <p class="paragraph-small">No credit card required</p>
@@ -1039,8 +1200,8 @@
           <img srcset="images/plat-intro.png 1004w,
             images/plat-intro-tablet.png 800w,
             images/plat-intro-mob.png 502w"
-            src="images/plat-intro.png"
-            alt="Intro"
+               src="images/plat-intro.png"
+               alt="Intro"
           />
         </div>
       </div>
@@ -1327,7 +1488,7 @@
           </div>
 
           <div class="no-risk__try_desktop">
-            <a href="#" class="button button--black button--black-white"> Try EdgeKit </a>
+            <a href="#" onclick="openModal()" class="button button--black button--black-white"> Try EdgeKit </a>
             <p>No credit card required</p>
           </div>
 
@@ -1382,7 +1543,7 @@
           <span>
             We are also able to provide a flat monthly fee based on your site traffic.
           </span>
-          <a id="contact-us-for-copy" href="#">
+          <a id="contact-us-for-copy" href="#" onclick="openModal()">
             Contact us
             <i>
               <svg
@@ -1513,6 +1674,75 @@
       </a>
     </div>
 
+    <div id="contact" class="contact-modal hide">
+      <div class="contact-modal__container">
+        <span class="xmark" onclick="closeModel()">
+          <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.01172 17.0625C0.613281 17.4609 0.601562 18.1406 1.01172 18.5391C1.42188 18.9375 2.10156 18.9375 2.5 18.5391L10 11.0391L17.5 18.5391C17.8984 18.9375 18.5898 18.9492 18.9883 18.5391C19.3867 18.1289 19.3867 17.4609 18.9883 17.0625L11.4883 9.55078L18.9883 2.05078C19.3867 1.65234 19.3984 0.972656 18.9883 0.574219C18.5781 0.164062 17.8984 0.164062 17.5 0.574219L10 8.07422L2.5 0.574219C2.10156 0.164062 1.41016 0.152344 1.01172 0.574219C0.613281 0.984375 0.613281 1.65234 1.01172 2.05078L8.51172 9.55078L1.01172 17.0625Z"
+                  fill="#A8A8A8" />
+          </svg>
+        </span>
+        <h2 class="hide_on_success">Contact us</h2>
+        <p class="hide_on_success">Fill out the form and we’ll be in touch as soon as possible or send us an email<br /> via hello@edgekit.org
+        </p>
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          class="contact__form"
+          onsubmit="submitForm(event)"
+        >
+          <input
+            type="text"
+            aria-label="name"
+            placeholder="Full name"
+            class="contact__form-field"
+            name="name"
+            onkeyup="fieldChanged(event, 'name')"
+            required
+          />
+          <input
+            type="email"
+            aria-label="email"
+            placeholder="Email address"
+            class="contact__form-field"
+            name="email"
+            onkeyup="fieldChanged(event, 'email')"
+            required
+          />
+          <textarea
+            placeholder="Your message"
+            class="contact__form-field"
+            name="message"
+            onkeyup="fieldChanged(event, 'message')"
+            required
+          ></textarea>
+          <button type="submit" class="button button--black" rel="nofollow" disabled="disabled">
+            Send
+          </button>
+        </form>
+        <div class="form-success">
+          <div class="multi-icons">
+            <span class="multi-icons__checkmark">
+              <svg width="36" height="35" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.957 34.3203C14.9922 34.3203 15.793 33.8906 16.3594 33.0508L34.7188 4.45703C35.1289 3.8125 35.3047 3.26562 35.3047 2.73828C35.3047 1.35156 34.3281 0.394531 32.9219 0.394531C31.9648 0.394531 31.3789 0.746094 30.793 1.66406L13.8594 28.5195L5.16797 17.3672C4.58203 16.6055 3.97656 16.293 3.11719 16.293C1.71094 16.293 0.695312 17.2891 0.695312 18.6562C0.695312 19.2617 0.910156 19.8477 1.41797 20.4531L11.5352 33.0703C12.2188 33.9297 12.9414 34.3203 13.957 34.3203Z"
+                      fill="#2C5EF6" />
+              </svg>
+            </span>
+            <div class="multi-icons__circle">
+              <div class="multi-icons__circle-border"></div>
+            </div>
+          </div>
+          <h2>Thank you!</h2>
+          <p class="success-desc">We’ll get back to you as soon as possible at dennis@airgrid.io</p>
+
+          <button onclick="closeModel()" class="button button--black" rel="nofollow">
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script>
       function showBurgerMenu() {
         const body = document.body;
@@ -1593,6 +1823,58 @@
           });
         });
       });
+
+      const encode = (data) => {
+        return Object.keys(data)
+          .map(
+            (key) =>
+              encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+          )
+          .join("&");
+      };
+
+      function openModal() {
+        const formWrapper = document.getElementById('contact');
+        formWrapper.classList.remove("hide");
+      }
+
+      function closeModel() {
+        const formWrapper = document.getElementById('contact');
+        formWrapper.classList.add("hide");
+      }
+
+      function submitForm(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formObject = new FormData(form);
+        const name = formObject.get("name");
+        const email = formObject.get("email");
+        const message = formObject.get("message");
+
+        fetch("/", {
+          method: "POST",
+          headers: {"Content-Type": "application/x-www-form-urlencoded"},
+          body: encode({"form-name": form.name, email,}),
+        });
+        const formWrapper = document.getElementById('contact');
+        formWrapper.classList.add("form-submitted");
+      }
+
+      const activeFields = [];
+
+      function fieldChanged(event, name) {
+        if (event.target.value.length !== 0) {
+          if (activeFields.includes(name) === false) {
+            activeFields.push(name);
+          }
+        } else {
+          return;
+        }
+
+        if (activeFields.length >= 3) {
+          document.querySelector("form.contact__form button").removeAttribute("disabled");
+        }
+      }
     </script>
   </body>
 </html>

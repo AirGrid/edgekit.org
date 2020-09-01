@@ -704,6 +704,7 @@ body.burger-menu-open .menu-mobile .nav-mobile-buttons {
   width: 81px;
   text-align: center;
   transition: all 0.2s;
+  border: none;
 }
 .button:hover {
   cursor: pointer;
@@ -727,6 +728,10 @@ body.burger-menu-open .menu-mobile .nav-mobile-buttons {
   border-radius: 6px;
   box-sizing: border-box;
   border: 1px solid #2c5ef6;
+}
+.button:disabled {
+  background-color: #D1D1D1;
+  color: #FFFFFF;
 }
 /* Typography */
 h1 {
@@ -767,6 +772,24 @@ p {
   font-weight: normal;
   font-size: 22px;
   line-height: 34px;
+}
+textarea {
+  resize: none;
+}
+textarea::-webkit-input-placeholder {
+  color: rgba(23, 23, 23, 0.5);
+}
+textarea:-moz-placeholder {
+  color: rgba(23, 23, 23, 0.5);
+}
+textarea::-moz-placeholder {
+  color: rgba(23, 23, 23, 0.5);
+}
+textarea:-ms-input-placeholder {
+  color: rgba(23, 23, 23, 0.5);
+}
+textarea::placeholder {
+  color: rgba(23, 23, 23, 0.5);
 }
 @media screen and (max-width: 550px) {
   h1 {
