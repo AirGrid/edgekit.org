@@ -853,178 +853,6 @@
           margin-bottom: 16px;
         }
       }
-      #contact-us-for-copy {
-        opacity: 1;
-        color: #ffffff;
-        transition: color 0.2s;
-      }
-      #contact-us-for-copy:hover {
-        color: #000000;
-      }
-      .contact-modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: rgba(57, 72, 115, 0.95);
-        z-index: 2;
-        width: 100%;
-        min-height: 100%;
-        display: flex;
-        justify-content: center;
-        transition: all 0.2s;
-      }
-      .contact-modal.hide {
-        opacity: 0;
-        z-index: -1;
-      }
-      .contact-modal .contact-modal__container {
-        position: relative;
-        margin: auto;
-        padding: 56px;
-        background: #FFFFFF;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        text-align: center;
-      }
-      .contact-modal .xmark {
-        position: absolute;
-        top: 28px;
-        right: 28px;
-        cursor: pointer;
-      }
-      .contact-modal h2 {
-        font-weight: bold;
-        font-size: 40px;
-        line-height: 40px;
-        margin-top: 0;
-        margin-bottom: 20px;
-      }
-      .contact-modal p {
-        max-width: 330px;
-        font-size: 18px;
-        line-height: 26px;
-        color: #333333;
-        margin: 0 auto;
-      }
-      .contact-modal p.success-desc {
-        margin-bottom: 96px;
-      }
-      .contact-modal a {
-        color: #2C5EF6;
-      }
-      .contact__form {
-        display: flex;
-        flex-direction: column;
-        margin-top: 30px;
-      }
-      .form-submitted .contact__form {
-        display: none;
-      }
-      .form-submitted .hide_on_success {
-        display: none;
-      }
-      .form-success {
-        display: none;
-      }
-      .form-submitted .form-success {
-        display: block;
-      }
-      .contact-modal .button {
-        width: 100%;
-        height: 64px;
-        margin: 0;
-        margin-top: 30px;
-        padding: 22px 0 26px;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 16px;
-      }
-      .contact__form-field {
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 16px;
-        color: rgba(23, 23, 23, 0.5);
-        padding: 20px 24px;
-        border-radius: 6px;
-        background-color: #ffffff;
-        color: #171717;
-        height: 56px;
-        outline: none;
-        transition: 0.3s ease-out;
-        border: 1px solid #D6D6D6;
-        margin: 10px 0;
-        -webkit-appearance: none;
-      }
-      textarea.contact__form-field {
-        letter-spacing: -0.06em;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 24px;
-        height: 136px;
-      }
-      .contact__form-field:focus ~ .subscribe__form-submit {
-        background-color: #2c5ef6;
-      }
-      .contact__form-field:focus,
-      .contact__form-field:hover {
-        border-color: #2c5ef6;
-        background-color: #fff;
-      }
-      .multi-icons {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        position: relative;
-        margin: 24px;
-      }
-      .multi-icons__checkmark {
-        position: absolute;
-      }
-      .multi-icons__checkmark svg {
-        height: 40px;
-        width: 40px;
-      }
-      .multi-icons__circle {
-        border-radius: 50%;
-        height: 96px;
-        width: 96px;
-        padding: 10px;
-        background: #E6ECFE;
-      }
-      .multi-icons__circle-border {
-        height: 96px;
-        width: 96px;
-        border-radius: 50%;
-      }
-      @media screen and (max-width: 550px) {
-        .contact-modal .contact-modal__container {
-          padding: 40px 24px;
-          margin: auto 16px;
-        }
-        .contact-modal h2 {
-          font-size: 32px;
-          line-height: 40px;
-          margin-bottom: 12px;
-        }
-        .contact-modal p {
-          max-width: 295px;
-          font-size: 16px;
-          line-height: 24px;
-        }
-        .contact__form {
-          margin-top: 30px;
-        }
-        .contact__form-field {
-          border-radius: 6px;
-          border-right: 1px solid transparent;
-        }
-        textarea.contact__form-field {
-          height: 104px;
-        }
-      }
-
     </style>
     <!-- Favicon -->
     <link
@@ -1076,7 +904,7 @@
             Docs
           </a>
           <!--          <a class="nav__link only_desktop" href="#" rel="noreferrer">Blog</a>-->
-          <a onclick="openModal(event)" class="nav__link" href="" rel="noreferrer" aria-label="Mailto">
+          <a onclick="openModal(event)" class="nav__link" href="" rel="noreferrer" aria-label="Contact">
             <svg
               width="20"
               height="16"
@@ -1543,7 +1371,7 @@
           </div>
 
           <div class="no-risk__try_mobile">
-            <a href="#" class="button button--black"> Try EdgeKit </a>
+            <a onclick="openModal(event)" href="#" class="button button--black"> Try EdgeKit </a>
             <p>No credit card required</p>
           </div>
         </div>
@@ -1593,7 +1421,7 @@
           Docs
         </a>
         <!--        <a class="nav__link" href="#" rel="noreferrer">Blog</a>-->
-        <a onclick="openModal(event)" class="nav__link" href="#" rel="noreferrer" aria-label="Mailto">
+        <a onclick="openModal(event)" class="nav__link" href="#" rel="noreferrer" aria-label="Contact">
           <svg
             width="20"
             height="16"
@@ -1646,7 +1474,7 @@
         Docs
       </a>
       <!--      <a class="nav__link" href="#" rel="noreferrer">Blog</a>-->
-      <a onclick="openModal(event)" class="nav__link" href="#" rel="noreferrer" aria-label="Mailto">
+      <a onclick="openModal(event)" class="nav__link" href="#" rel="noreferrer" aria-label="Contact">
         <svg
           width="20"
           height="16"
@@ -1682,7 +1510,7 @@
       </a>
     </div>
 
-    <div id="contact" class="contact-modal hide">
+    <div id="contact" class="contact-modal hide not-visible">
       <div class="contact-modal__container">
         <span class="xmark" onclick="closeModel()">
           <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1846,11 +1674,15 @@
         event.preventDefault();
         const formWrapper = document.getElementById('contact');
         formWrapper.classList.remove("hide");
+        formWrapper.classList.remove("not-visible");
       }
 
       function closeModel() {
         const formWrapper = document.getElementById('contact');
         formWrapper.classList.add("hide");
+        setTimeout(function() {
+          formWrapper.classList.add("not-visible");
+        }, 400);
       }
 
       function submitForm(event) {
