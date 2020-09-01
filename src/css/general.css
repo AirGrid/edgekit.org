@@ -495,7 +495,7 @@ a {
   }
 }
 @media screen and (max-width: 860px) {
-  .nav__link {
+  header .nav__link {
     margin: 0 12px;
   }
 }
@@ -860,6 +860,9 @@ textarea::placeholder {
   .hood__pic {
     margin-right: 40px;
   }
+  .section__move-faster .hood__pic {
+    margin-right: 30px;
+  }
 }
 .hood__title {
   font-weight: 600;
@@ -905,7 +908,7 @@ textarea::placeholder {
 .grid-list .grid-item {
   text-align: center;
 }
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1120px) {
   .grid-list {
     display: block;
     width: 336px;
