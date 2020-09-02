@@ -818,42 +818,78 @@
         line-height: 20px;
         color: rgba(255, 255, 255, 0.8);
       }
+      /* Slider */
       #pricing-slider {
+        outline: 0;
+        border: 0;
         -webkit-appearance: none;
         appearance: none;
         width: 100%;
         margin: 10px 0;
-        height: 8px;
+        height: 10px;
         border-radius: 40px;
         background: rgba(0, 0, 0, 0.1);
-        outline: none;
-        -webkit-transition: 0.2s;
-        transition: opacity 0.2s;
+      }
+      /* Range slider */
+      #pricing-slider::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+        box-sizing: border-box;
+        border: none;
+        background: #fff;
+        border-radius: 40px;
+        height: 10px;
       }
       #pricing-slider::-moz-range-track {
-        opacity: 0.1;
+        -webkit-appearance: none;
+        box-sizing: border-box;
+        border: none;
+        background: #fff;
+        border-radius: 40px;
+        height: 10px;
       }
-      #pricing-slider:hover::-moz-range-track {
-        opacity: 0.4;
+      #pricing-slider::-ms-track {
+        -webkit-appearance: none;
+        box-sizing: border-box;
+        border: none;
+        background: #fff;
+        border-radius: 40px;
+        height: 10px;
+      }
+      /* Range thumb */
+      #pricing-slider,  #pricing-slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
       }
       #pricing-slider::-webkit-slider-thumb {
         -webkit-appearance: none;
-        appearance: none;
         width: 28px;
         height: 28px;
         border-radius: 50%;
         background: #ffffff;
-        opacity: 1 !important;
+        border: 2px solid #648bff;
         cursor: pointer;
+        margin-top: -9px;
       }
       #pricing-slider::-moz-range-thumb {
+        -webkit-appearance: none;
         width: 28px;
         height: 28px;
         border-radius: 50%;
         background: #ffffff;
-        opacity: 1;
+        border: 2px solid #648bff;
         cursor: pointer;
+        margin-top: -9px;
       }
+      #pricing-slider::-ms-thumb {
+        -webkit-appearance: none;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #ffffff;
+        border: 2px solid #648bff;
+        cursor: pointer;
+        margin-top: 0;
+      }
+
       .pricing-slider-currency {
         margin-right: -5px;
       }
