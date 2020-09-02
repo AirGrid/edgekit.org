@@ -1032,6 +1032,22 @@ textarea::placeholder {
   margin: 10px 0;
   -webkit-appearance: none;
 }
+input.contact__form-field {
+  font-family: "Inter", serif;
+  font-size: 16px;
+  line-height: 16px;
+  font-style: normal;
+  font-weight: normal;
+}
+input.contact__form-field::placeholder {
+  font-family: "Inter", serif;
+  letter-spacing: -0.02em;
+  font-size: 16px;
+  line-height: 16px;
+  font-style: normal;
+  font-weight: normal;
+  color: rgba(23, 23, 23, 0.5);
+}
 textarea.contact__form-field {
   font-family: "Inter", serif;
   letter-spacing: -0.02em;
@@ -1040,6 +1056,7 @@ textarea.contact__form-field {
   font-size: 16px;
   line-height: normal;
   height: 136px;
+  color: #171717;
 }
 .contact__form-field:focus ~ .subscribe__form-submit {
   background-color: #2c5ef6;
