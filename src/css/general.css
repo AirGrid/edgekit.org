@@ -662,6 +662,7 @@ body.burger-menu-open .menu-mobile .nav-mobile-buttons {
   }
   .footer .nav-mobile-buttons {
     position: initial;
+    display: inherit;
   }
   .footer {
     margin-bottom: 48px;
@@ -671,6 +672,12 @@ body.burger-menu-open .menu-mobile .nav-mobile-buttons {
   }
   .nav__link--active {
     padding: 0 0 6px;
+  }
+  .footer .nav .footer__icons .nav__link {
+    margin: 0 14px;
+  }
+  .footer .nav .footer__icons {
+    margin-bottom: 28px;
   }
 }
 
