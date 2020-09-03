@@ -136,12 +136,13 @@
         }
         .intro .section h1 {
           max-width: 400px;
-          margin: 16px 0;
+          margin: 0;
+          margin-bottom: 16px;
         }
         .intro .section p {
           max-width: 338px;
           font-size: 20px;
-          line-height: 26px;
+          line-height: 28px;
         }
         .intro .section p.paragraph-small {
           font-size: 16px;
@@ -153,12 +154,16 @@
           width: calc(100% - 16px);
           height: 350px;
           border-bottom-left-radius: 0;
+          padding: 0 0 0 5px;
         }
         .intro-browser .intro-browser-image img {
           width: 502px;
         }
         .intro .header {
           margin-bottom: 0;
+        }
+        .intro .section .intro__button {
+          margin: 28px 0 16px
         }
       }
       @media screen and (max-width: 380px) {
@@ -167,9 +172,6 @@
         }
         p {
           margin: 12px 0;
-        }
-        .intro .section {
-          padding: 50px 0 48px;
         }
         .intro-browser {
           top: 0;
@@ -185,6 +187,7 @@
       }
       .intro-browser .menu {
         height: 40px;
+        margin-left: 5px;
       }
       .intro-browser .bullet {
         display: inline-block;
@@ -196,6 +199,19 @@
       }
       .intro-browser .intro-browser-image img {
         border-radius: 10px;
+      }
+      @media screen and (max-width: 550px){
+        .intro-browser .menu {
+          height: 20px;
+        }
+        .intro-browser .bullet {
+          display: inline-block;
+          width: 6px;
+          height: 6px;
+          margin: 7px 2px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.5);
+        }
       }
       /** for-publishers  */
       .for-publishers {
