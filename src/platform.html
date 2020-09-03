@@ -598,6 +598,11 @@
           margin-top: 40px;
         }
       }
+      @media screen and (max-width: 375px) {
+        .section__deal-revenue .section-heading p {
+          max-width: 310px;
+        }
+      }
       /* No Risk */
       .no-risk {
         position: relative;
@@ -807,6 +812,7 @@
         width: 37px;
       }
       .no-risk--grid-description {
+        margin-top: 32px;
         margin-bottom: 0;
       }
       .no-risk--grid-price {
@@ -841,7 +847,7 @@
         -webkit-appearance: none;
         appearance: none;
         width: 100%;
-        margin: 10px 0;
+        margin: 14px 0 8px;
         height: 10px;
         border-radius: 40px;
         background: rgba(0, 0, 0, 0.1);
@@ -881,7 +887,7 @@
         height: 28px;
         border-radius: 50%;
         background: #ffffff;
-        border: 2px solid #648bff;
+        border: 4px solid #648bff;
         cursor: pointer;
         margin-top: -9px;
       }
@@ -911,6 +917,7 @@
       }
       @media screen and (max-width: 767px) {
         .no-risk--grid-description {
+          margin-top: 20px;
           max-width: 300px;
         }
       }
@@ -1275,7 +1282,7 @@
 
     <section class="section section__move-faster">
       <div class="container section-heading">
-        <h2>Move faster with <br />a hosted EdgeKit service.</h2>
+        <h2>Move faster <br class="only_mobile"/> with <br class="only_desktop"/>a hosted<br class="only_mobile"/> EdgeKit service.</h2>
         <p>
           Built for publishers who’d rather spend time creating content than
           managing ad-tech infrastructure.
@@ -1349,7 +1356,7 @@
 
     <section class="section">
       <div class="container section-heading">
-        <h2>NLP feature extraction.</h2>
+        <h2>NLP feature<br class="only_mobile"/> extraction.</h2>
         <p>
           Automated crawling and processing of your site content to create
           language features to power EdgeKit audience models.

@@ -1034,7 +1034,7 @@ textarea::placeholder {
 input.contact__form-field {
   font-family: "Inter", serif;
   font-size: 16px;
-  line-height: 16px;
+  line-height: normal;
   font-style: normal;
   font-weight: normal;
 }
@@ -1042,7 +1042,7 @@ input.contact__form-field::placeholder {
   font-family: "Inter", serif;
   letter-spacing: -0.02em;
   font-size: 16px;
-  line-height: 16px;
+  line-height: normal;
   font-style: normal;
   font-weight: normal;
   color: rgba(23, 23, 23, 0.5);
@@ -1111,9 +1111,10 @@ textarea.contact__form-field {
     line-height: 24px;
   }
   .contact__form {
-    margin-top: 30px;
+    margin-top: 24px;
   }
   .contact__form-field {
+    margin: 8px 0;
     border-radius: 6px;
   }
   textarea.contact__form-field {
@@ -1124,6 +1125,10 @@ textarea.contact__form-field {
   }
   .multi-icons {
     margin: 90px auto 24px;
+  }
+  .contact-modal .button {
+    height: 56px;
+    margin-top: 24px;
   }
 }
 @media screen and (max-width: 320px) {
