@@ -1029,9 +1029,6 @@ p {
     }
 }
 @media screen and (max-width: 660px) {
-    .section__clients .section-heading p {
-        max-width: 320px;
-    }
     .clients {
         margin-top: 40px;
         grid-template-columns: repeat(2, 1fr);
@@ -1056,5 +1053,10 @@ p {
     }
     .clients_stats__item {
         height: 128px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .section__clients .section-heading p {
+        max-width: 320px;
     }
 }
