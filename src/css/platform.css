@@ -983,13 +983,13 @@ p {
 }
 .clients_stats__item-content {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 18px;
     color: #171717;
 }
 .clients_stats__item-value {
     display: inline-block;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     font-weight: bold;
     font-size: 22px;
     line-height: 40px;
@@ -1001,6 +1001,9 @@ p {
 @media screen and (max-width: 768px) {
     .clients__item {
         height: 105px;
+    }
+    .clients_stats__item-content {
+        font-size: 16px;
     }
     .clients__item:nth-child(1) img {
         width: 102px;
